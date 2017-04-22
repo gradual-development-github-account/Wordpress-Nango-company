@@ -1,0 +1,1 @@
+<!--<h6>get_footer() plug</h6>-->
