@@ -1,0 +1,47 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family__body, sans-serif;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+legend {
+  margin-bottom: 0px;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
