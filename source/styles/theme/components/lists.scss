@@ -1,0 +1,24 @@
+.components.lists.list-1 {
+  .item {
+    display: flex;
+    margin-bottom: 10px;
+
+    &__text,
+    &__value {
+
+    }
+    &__subelement {
+      flex-grow: 1;
+    }
+  }
+
+  .item.baseline {
+    display: flex;
+    align-items: baseline;
+
+    &__subelement {
+      flex-grow: 1;
+      height: 5px;
+    }
+  }
+}

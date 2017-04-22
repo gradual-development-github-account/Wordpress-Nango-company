@@ -1,0 +1,5 @@
+.compononents.buttons.button-1 {
+  @include components-buttons(
+    $padding: '50px  100px'
+  );
+}
