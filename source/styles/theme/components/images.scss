@@ -1,0 +1,33 @@
+.components.image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  .absolute {
+    @include absolute_alignment;
+    @include max_stretching;
+    z-index: 5;
+
+    display: block;
+  }
+  .full-width {
+    @include absolute_stretching;
+    z-index: 5;
+
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+  }
+
+
+  .this__frame-1 {
+    position: absolute;
+    z-index: 4;
+
+    width:  calc( 100% - 100px );
+    height: calc( 100% - 200px );
+  }
+}

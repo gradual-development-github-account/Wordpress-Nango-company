@@ -1,0 +1,21 @@
+.item-table-characteristics--2-cols {
+  &__row {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__col-1 {
+    width: 50%;
+    text-align: left;
+  }
+  &__col-2 {
+    width: 50%;
+    text-align: right;
+  }
+
+  &.list {
+    //text-align: left;
+  }
+}
+
+//todo: в остальных компонентах убрать классы flex-grid и т.п.
+//чтобы коомпонент был независим

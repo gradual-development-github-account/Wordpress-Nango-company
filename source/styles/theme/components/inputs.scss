@@ -1,0 +1,38 @@
+.components.inputs {
+  &.input-1 {
+    border-width:  $border-width-inputs--xs;
+    border-radius: $border-radius-inputs--xs;
+  }
+
+  &.input-2[type="text"] {
+    padding: 20px 30px;
+    background-color: transparent;
+    border-width:  $border-width-inputs--sm;
+    border-radius: $border-radius-inputs--md;
+  }
+  &.input-2[type="text"]:focus {
+    border-width:  $border-width-inputs--sm;
+    background-color: transparent;
+  }
+
+
+
+
+
+  &.input-border--color-1 {
+    border: solid  $color-3-layout;
+  }
+  &.input-border--color-1:focus {
+    border: solid  $color-2-layout;
+  }
+  &.input-placeholder--color-1::-moz-placeholder {
+    color: $color-3-layout;
+    opacity: 1;
+  }
+  &.input-placeholder--color-1:focus::-moz-placeholder {
+    color: $color-2-layout;
+    opacity: 1;
+  }
+
+
+}
