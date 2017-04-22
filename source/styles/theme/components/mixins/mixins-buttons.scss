@@ -1,0 +1,6 @@
+@mixin components-buttons(
+  $padding: '20px  40px'
+)
+{
+  padding: $padding;
+}
