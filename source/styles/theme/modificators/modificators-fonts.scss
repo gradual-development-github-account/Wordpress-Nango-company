@@ -1,0 +1,221 @@
+.modificators.fonts {
+  .font {
+    &-body {
+      @include font( $size: $font-size-body, $line-height: 20px );
+    }
+  }
+}
+
+
+
+
+
+
+
+.layout {
+
+  &.font-family-1 {
+    //Ubuntu-Regular
+    font-family: $font-family-1--regular ,sans-serif;
+  }
+  &.font-family-2 {
+    //Ubuntu-Bold
+    font-family: $font-family-1--bold ,sans-serif;
+  }
+  &.font-family-3 {
+    //Montserrat-Regular
+    font-family: $font-family-2--regular ,sans-serif;
+  }
+  &.font-family-4 {
+    //Montserrat-Bold
+    font-family: $font-family-2--bold ,sans-serif;
+  }
+
+
+  &.paragraph {
+    &--justify {
+      text-align: justify;
+    }
+  }
+
+
+  &.fonts {
+    &-menu {
+      &--main-up {
+        @include font( $size: 16px, $text-transform: 'up' );
+      }
+    }
+
+    &-titles {
+      &--large {
+        @include font( $size: 140px );
+      }
+      &--lg-up {
+        @include font( $size: 48px, $text-transform: 'up' );
+      }
+      &--lg {
+        @include font( $size: 48px );
+      }
+      &--md {
+        @include font( $size: 36px, $line-height: 40px );
+      }
+      &--md-1 {
+        @include font( $size: 24px );
+      }
+      &--sm {
+        @include font( $size: 20px );
+      }
+      &--xs {
+        @include font( $size: 16px );
+      }
+      &--xs-up {
+        @include font( $size: 16px, $text-transform: 'up' );
+      }
+      &--xs-1-up {
+        @include font( $size: 14px, $text-transform: 'up' );
+      }
+    }
+
+    &-section-titles {
+      &--md {
+        @include font( $size: 36px );
+      }
+    }
+
+    &-section-titles-description {
+      &--md-up {
+        @include font( $size: 16px, $text-transform: 'up' );
+      }
+    }
+
+    &-paragraphs {
+      &--lg {
+        @include font( $size: 16px );
+      }
+      &--md {
+        //@include font( $size: 14px );
+      }
+    }
+
+    &-lists {
+      &--lg {
+        @include font( $size: 16px );
+      }
+    }
+
+    &-buttons {
+      &--md-up {
+        @include font( $size: 14px, $text-transform: 'up' );
+      }
+    }
+
+    &-headers-header {
+      &--lg {
+        @include font( $size: 24px );
+      }
+      &--md {
+        @include font( $size: 16px );
+      }
+    }
+    &-headers-text {
+      &--md {
+        @include font( $size: 14px );
+      }
+    }
+
+    &-item-headers {
+      &--lg {
+        @include font( $size: 24px );
+      }
+      &--md {
+        @include font( $size: 16px );
+      }
+    }
+    &-item-description {
+      &--md {
+        @include font( $size: 14px );
+      }
+    }
+
+    &-links {
+      &--md-up {
+        @include font( $size: 14px, $text-transform: 'up' );
+      }
+      &--lg {
+        @include font( $size: 16px );
+      }
+    }
+
+    &-numbers {
+      &--xs {
+        @include font( $size: 16px );
+      }
+    }
+
+    &-input-placeholders--sm {
+      @include font( $size: 14px );
+    }
+    &-input-placeholders--md {
+      @include font( $size: 16px );
+    }
+
+    &-tab-headers {
+      &-xs--md {
+        @include font( $size: 16px, $text-transform: 'up' );
+      }
+      &-xs--up {
+        @include font( $size: 14px, $text-transform: 'up' );
+      }
+    }
+
+    &-progress-bars-header {
+      @include font( $size: 16px );
+    }
+    &-progress-bars-value {
+      @include font( $size: 14px );
+    }
+
+    &-breadcrumbs {
+      @include font( $size: 14px );
+    }
+
+    &-pagination {
+      @include font( $size: 16px );
+    }
+
+    &-post-date {
+      &--xs {
+        @include font( $size: 12px );
+      }
+      &--md {
+        @include font( $size: 14px );
+      }
+    }
+
+    &-comments-header {
+      @include font( $size: 16px, $text-transform: 'up' );
+    }
+    &-comments-date {
+      @include font( $size: 12px );
+    }
+    &-comments-text {
+      @include font( $size: 14px );
+    }
+    &-comments-button {
+      @include font( $size: 14px );
+    }
+
+    &-tables-header {
+      @include font( $size: 24px );
+    }
+    &-tables-col-header {
+      @include font( $size: 16px, $text-transform: 'up' );
+    }
+
+    &-carousel-header {
+      @include font( $size: 14px, $text-transform: 'up' );
+    }
+  }
+}
+
+

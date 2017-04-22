@@ -1,0 +1,28 @@
+.layout {
+  &.margin {
+    &-title {
+      &--md {
+        margin-bottom: 30px;
+      }
+      &--lg {
+        margin-bottom: 60px;
+      }
+    }
+    &-paragraph {
+      &--md {
+        margin-bottom: 30px;
+      }
+      &--lg {
+        margin-bottom: 60px;
+      }
+    }
+    &-item {
+      &--md {
+        margin-bottom: 30px;
+      }
+      &--lg {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
