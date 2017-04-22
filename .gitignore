@@ -18,5 +18,8 @@ build/wp-content/themes/nango-company/sources/theme/styles/**/*.*
 build/wp-content/themes/nango-company/sources/vendor/**/*.*
 
 
-wp-settings.txt
-git-commits.txt
+source/styles/styles/*.scss
+
+
+wp-settings.md
+git-commits.md
