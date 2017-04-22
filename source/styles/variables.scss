@@ -1,0 +1,91 @@
+/*Colors (begin)*/
+/*Layout colors*/
+$color-1-layout: #595959;
+
+$color-2-layout:        #F83700;
+$color-2-lighter-10-layout: lighten( $color-2-layout, 10% );
+
+$color-3-layout: #FE8C00;
+$color-4-layout: #FAFAFA;
+
+$color-5-layout: #FFFFFF;
+$color-5-op-0-5-layout: transparentize( $color-5-layout, 0.5 );
+$color-5-op-0-9-layout: transparentize( $color-5-layout, 0.9 );
+
+$color-6-layout: #000000;
+$color-6-lighter-10-layout: lighten( $color-6-layout, 10% );
+
+$color-7-layout: #6fa9ff;
+
+$color-8-layout: #666666;
+$color-9-layout: #F2F2F2;
+
+$color-header-1: #57574F;
+/*Colors elements*/
+/*Colors elements when cursor mouse over them*/
+/*Colors (end)*/
+
+
+/*Path (begin)*/
+/*Images*/
+$images-path:                                       '';
+/*Icons*/
+$icons-path:                                        '';
+/*Fonts*/
+$fonts-path:                                        '../fonts';
+/*Path (end)*/
+
+
+/*Fonts*/
+/*Dimensions*/
+$font-size-body:                                    '14px';
+
+
+/*Families*/
+
+
+$font-family-1--regular:                         'Ubuntu-Regular';
+$font-family-1--bold:                            'Ubuntu-Bold';
+
+$font-family-2--regular:                         'Montserrat-Regular';
+$font-family-2--bold:                            'Montserrat-Bold';
+
+
+
+$font-family-body:                                  $font-family-1--regular;
+
+
+
+/*Font measures*/
+$measures-of-font:                                'px';
+/*Fonts (end)*/
+
+
+/*Block model properties (begin)*/
+$border-radius-buttons--xs: '4px';
+$border-radius-buttons--md: '40px';
+
+
+$border-radius-inputs--xs:  '4px';
+$border-radius-inputs--md:  '40px';
+
+
+$border-radius--links:   '4px';
+$border-radius--dropdown-menus:   '4px';
+
+$border-width-inputs--xs:   '1px';
+$border-width-inputs--sm:   '2px';
+
+$links-line-width:    '4px';
+$links-line-length:   '100px';
+
+/*Blocks measures*/
+$measures-of-blocks:                                'px';
+/*Block model properties (end)*/
+
+
+/*Animation (begin)*/
+/*Duration*/
+$transition-fast-speed:                             '0.25s';
+$transition-low-speed:                              '1.00s';
+/*Animation (end)*/
