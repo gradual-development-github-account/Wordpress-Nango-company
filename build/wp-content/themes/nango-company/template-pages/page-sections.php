@@ -8,14 +8,14 @@ Template Name: Sections page
 <?php get_template_part('template-parts/head-page'); ?>
 
 
-<div class="components  page  sections
-            flex-grid  flex-container  container--direction-column  container--justify-content-space-between">
+<div class="">
 <div class="">
   <?php get_template_part('template-parts/headers/header-1'); ?>
 
-  <main class="main  home">
+  <main class="">
 
-    <div class="container">
+    <div class="vendor  components  flexboxgrid  container-1170
+                modificators  container--center  container--full-height">
       <h1>Sections page</h1>
 
       <a href="#">Link</a>
