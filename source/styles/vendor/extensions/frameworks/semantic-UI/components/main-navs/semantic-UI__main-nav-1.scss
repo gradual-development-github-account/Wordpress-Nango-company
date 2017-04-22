@@ -1,0 +1,122 @@
+.frameworks.semantic-UI.main-nav-1 {
+  position: relative;
+  z-index: 10;
+  height: 70px;
+
+  .main-nav-1 {
+    &__shield {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+
+      height: 70px;
+      width: 90%;
+    }
+
+    &__container {
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+    }
+    &__container.active {
+      background-color: #fff;
+    }
+
+    &__icon-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      height: 100%;
+    }
+
+    &__menu {
+      max-height: inherit;
+      border: none;
+
+      .item {
+        padding: 0 !important;
+
+        a {
+          display: block;
+          padding: 20px 30px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@media ( min-width:  768px ) {
+  /*Показываем меню*/
+  .frameworks.semantic-UI.main-nav-1 {
+    height: auto;
+
+    .main-nav-1 {
+      &__shield {
+        height: 0;
+      }
+      &__container {
+        position: relative;
+      }
+      &__menu {
+        position: relative;
+        display: flex !important;
+        flex-wrap: wrap;
+        visibility: visible !important;
+      }      
+    }
+  }
+  /*Показываем меню*/
+  /*Скрываем кнопку hamburger*/
+  .frameworks.semantic-UI.main-nav-1 {
+    .main-nav-1 {
+      &__button {
+        display: none;
+      }
+    }
+  }
+  /*Скрываем кнопку hamburger*/
+  /*Перекрышиваем меню*/
+  .frameworks.semantic-UI.main-nav-1 {
+    .main-nav-1 {
+      &__menu {
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+
+        .item {
+          border: none;
+
+          a {
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.frameworks.semantic-UI.main-nav-1 {
+  /*Fonts*/
+  .main-nav-1__menu {
+    .item {
+      font-family: $font-family-2--bold;
+      @include font( $size: 16px, $text-transform: 'up' );
+    }
+  
+
+  /*Fonts*/
+  /*Colors*/
+    .item {
+      color: $color-5-layout;
+      /*Сделать через контрастный фон*/
+    }
+  /*Colors*/
+  }
+}
