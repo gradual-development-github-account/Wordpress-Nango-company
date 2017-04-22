@@ -11,23 +11,39 @@ var gulp   = require('gulp'),
 
 gulp.task('clean', function() {
   return del([
-      'build/wp-content/themes/nango-master-portfolio/assets/styles/layout.css',
-      'source/scss/scss-concatenated/layout.scss'
+      'build/wp-content/themes/nango-company/sources/theme/styles/styles.css',
+      'source/styles/styles/styles.scss'
   ]);
 });
 
 gulp.task('concat-styles', function() {
   return gulp.src([
-    'source/**/*.scss',    
+    'source/styles/variables.scss',
+    'source/styles/mixins.scss',
+
+
+    'source/styles/vendor/**/*.scss',     
+
+      
+    'source/styles/theme/normalize.scss',
+      
+    'source/styles/theme/fonts.scss',
+
+
+    'source/styles/theme/components/mixins/**/*.scss',
+
+    'source/styles/theme/components/*.scss',
+      
+    'source/styles/theme/templates/**/*.scss'
   ])
-    .pipe(concat('layout-concatenated.scss'))
-    .pipe(gulp.dest('source/scss/scss-concatenated/'));
+    .pipe(concat('styles.scss'))
+    .pipe(gulp.dest('source/styles/styles/'));
 });
 
 gulp.task('sass', function () {
-    return gulp.src('source/scss/scss-concatenated/layout-concatenated.scss')
+    return gulp.src('source/styles/styles/styles.scss')
     .pipe(sass())
-    .pipe(gulp.dest('build/wp-content/themes/nango-master-portfolio/assets/styles/')).pipe(browserSync.stream());
+    .pipe(gulp.dest('build/wp-content/themes/nango-company/sources/theme/styles/')).pipe(browserSync.stream());
 });
 
 
@@ -36,18 +52,17 @@ gulp.task('sass', function () {
 
 
 gulp.task('watcher', function () {
-  gulp.watch( 'source/scss/scss-separated/scss-for-layout/**/*.scss', [ 'clean', 'concat-styles' ]);
-  gulp.watch( 'source/scss/scss-separated/scss-for-frameworks/**/*.scss', [ 'clean', 'concat-styles' ]);
-  gulp.watch( 'source/scss/scss-separated/scss-for-libs/**/*.scss', [ 'clean', 'concat-styles' ]);
-  
-  gulp.watch( 'source/scss/scss-concatenated/layout-concatenated.scss', [ 'sass' ]).on('change', browserSync.reload);
+  gulp.watch( 'source/styles/theme/**/*.scss',  [ 'clean', 'concat-styles' ]);
+  gulp.watch( 'source/styles/vendor/**/*.scss', [ 'clean', 'concat-styles' ]);
+
+  gulp.watch( 'source/styles/styles/styles.scss', [ 'sass' ]).on('change', browserSync.reload);
 });
 
 
 gulp.task('browserSync', function () {
   browserSync.init({
     browser: [ "firefox" ],
-    proxy: "PHP/WP/nango__master-portfolio/build/"    
+    proxy: "PHP/WP/theme-Nango--company/build/"
   })
 });
 
