@@ -1,0 +1,42 @@
+.vendor.components.flexboxgrid {
+  &.container-1200 {
+    width: 100%;
+  }
+}
+
+
+
+
+//Phones
+@media ( min-width: 768px ) {
+
+}
+
+
+
+
+//Tabs
+@media ( min-width: 992px ) {
+
+}
+
+
+
+
+//Desktops and tabs
+@media ( min-width: 1200px ) {
+  .vendor.components.flexboxgrid {
+    &.container-1200 {
+      width: 1200px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
