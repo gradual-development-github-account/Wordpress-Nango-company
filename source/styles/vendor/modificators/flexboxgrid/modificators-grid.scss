@@ -1,4 +1,13 @@
-.flex-grid {
+.vendor.modificators.flexboxgrid {
+
+  &.container--center {
+    margin: 0 auto;
+  }
+  &.container--full-height {
+    height: 100%;
+  }
+
+
   &.flex-container {
     display: flex;
   }
@@ -69,14 +78,3 @@
 
 
 
-/*Allign elements (begin)*/
-.allign-middle {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.allign-top {
-  display: inline-block;
-  vertical-align: top;
-}
-/*Allign elements (end)*/
