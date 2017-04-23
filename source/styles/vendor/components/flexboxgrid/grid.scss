@@ -1,16 +1,26 @@
-.container {
-  //max-width: 1200px;
-  //padding-left: 15px;
-  //padding-right: 15px;
-  //margin: 0 auto;
-  //height: 100%;
+.vendor.components.flexboxgrid {
+  &.container-1200 {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    box-sizing: border-box;
+  }
+
+  &.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    box-sizing: border-box;
+  }
+
+
+
+
+
+  .row {
+
+  }
+
 }
-
-.container-fluid {
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 100%;
-}
-
-
 
