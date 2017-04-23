@@ -27,12 +27,14 @@ gulp.task('concat-styles', function() {
       
     'source/styles/theme/normalize.scss',
       
-    'source/styles/theme/fonts.scss',
+    'source/styles/theme/font-faces.scss',
 
 
     'source/styles/theme/components/mixins/**/*.scss',
 
-    'source/styles/theme/components/*.scss',
+    'source/styles/theme/components/**/*.scss',
+      
+    'source/styles/theme/modificators/**/*.scss',  
       
     'source/styles/theme/templates/**/*.scss'
   ])
