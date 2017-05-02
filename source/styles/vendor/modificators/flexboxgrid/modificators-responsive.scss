@@ -1,0 +1,56 @@
+.vendor.modificators.flexboxgrid.responsive {
+  //Phones with low resolution ( *-xs-* )
+    &.container-1800__items--order--1 {
+      order: -1;
+    }
+
+    &.container-1200--half-lg {
+
+    }
+
+    &.container--justify-content-center-lg {
+      justify-content: flex-start;
+    }
+
+
+  //Phones ( *-sm-* )
+  @media ( min-width: 768px ) {
+
+  }
+
+
+  //Tabs ( *-md-* )
+  @media ( min-width: 992px ) {
+
+  }
+
+
+  //Desktops HD ( *-lg-* )
+  @media ( min-width: 1200px ) {
+    &.container-1200--half-lg {
+      width: 600px;
+      flex-basis: auto;
+      max-width: none;
+    }
+
+    &.container--justify-content-center-lg {
+      justify-content: center;
+    }
+  }
+
+
+  //Desktops FHD ( *-1800-* )
+  @media ( min-width: 1800px ) {
+    &.container-1800__items--order--1 {
+      order: 0;
+    }
+
+    &.container-1200--half-lg {
+      width: 300px;
+      flex-basis: auto;
+      max-width: none;
+    }
+
+
+  }
+}
