@@ -1,3 +1,7 @@
-.templates.pages {
-  color: $color-6-layout;
+.theme.components.template-parts.pages {
+  &.page-1 {
+    .page-1__header-wrapper {
+      z-index: 5;
+    }
+  }
 }
