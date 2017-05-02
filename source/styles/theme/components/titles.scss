@@ -1,0 +1,15 @@
+.theme.components.titles {
+  display: block;
+
+  &.titles-with-line {
+    &.titles-with-line-1 {
+      .text, .line {
+        display: inline-block;
+        vertical-align: bottom;
+      }
+      .text {
+        margin-right: 45px;
+      }
+    }
+  }
+}

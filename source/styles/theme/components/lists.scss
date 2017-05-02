@@ -1,7 +1,12 @@
-.components.lists.list-1 {
+.theme.components.lists.list-1 {
   .item {
     display: flex;
-    margin-bottom: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $color-9-layout;
 
     &__text,
     &__value {
@@ -13,7 +18,6 @@
   }
 
   .item.baseline {
-    display: flex;
     align-items: baseline;
 
     &__subelement {
@@ -21,4 +25,11 @@
       height: 5px;
     }
   }
+}
+
+
+
+
+.theme.components.lists.item-list-1 {
+
 }

@@ -1,0 +1,19 @@
+.theme.components.links {
+  &.links-with-svg {
+    .text, .icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &.links-svg-in-svg-1 {
+    position: relative;
+
+    .icon-external {
+      @include absolute_alignment();
+    }
+    .icon-internal {
+      @include absolute_alignment();
+    }
+  }
+}

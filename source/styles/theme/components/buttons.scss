@@ -1,5 +1,31 @@
-.compononents.buttons.button-1 {
-  @include components-buttons(
-    $padding: '50px  100px'
-  );
+.theme.compononents.buttons {
+  &.button-1 {
+    line-height: 16px;
+    text-transform: uppercase;
+
+    padding: 20px 50px;
+
+    border-width: 1px;
+    border-color: $color-2-layout;
+    border-style: solid;
+    border-radius: calc( 20px + 16px / 2 );
+
+    background-color: transparent;
+
+    transition: all 0.5s;
+
+    &:hover {
+      color: $color-5-layout;
+      background-color: $color-2-layout;
+      border-color: $color-6-layout;
+    }
+  }
+
+  &.buttons-with-svg {
+    .text, .icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
 }
