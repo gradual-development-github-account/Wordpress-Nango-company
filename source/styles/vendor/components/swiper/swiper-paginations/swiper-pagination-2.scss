@@ -1,0 +1,27 @@
+.vendor.components.swiper-pagination-2 {
+  position: relative;
+  z-index: 1;
+  bottom: 0;
+  text-align: left;
+
+
+  .swiper-pagination-bullet {
+    width: auto;
+    border-radius: 0;
+    position: relative;
+    height: 2px;
+    background: none;
+
+    &__text {
+      position: relative;
+    }
+  }
+
+  .swiper-pagination-bullet:first-child {
+    margin-left: 0;
+  }
+
+  .swiper-pagination-bullet-active {
+    
+  }
+}

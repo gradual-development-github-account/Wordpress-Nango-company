@@ -1,0 +1,24 @@
+.vendor.components.swiper-pagination-1 {
+  top: auto;
+  bottom: 0px;
+  right: 15px;
+
+  .swiper-pagination-bullet {
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    border-radius: 0px;
+    margin: 0;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+
+    transition: all 0.3s;
+  }
+
+  .swiper-pagination-bullet-active {
+    transform-origin: center  bottom;
+    transform: scaleY(2);
+
+    background: linear-gradient( 0deg, $color-3-layout 0%, $color-2-layout 100% ); /* w3c */
+  }
+}
