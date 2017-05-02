@@ -1,9 +1,9 @@
 .theme.modificators.fonts {
-  .font {
-    &-body {
-      @include font( $size: $font-size-body, $line-height: 20px );
-    }
+
+  &-body {
+    @include font( $size: unquote( $font-size-body ), $line-height: 20px );
   }
+
 }
 
 
@@ -32,12 +32,18 @@
   }
 
 
-  &.paragraph {
+  &-paragraph {
     &--justify {
       text-align: justify;
     }
   }
 
+
+  &.sections-number {
+    &--lg {
+      @include font( $size: 200px, $text-transform: 'up', $line-height: 200px );
+    }
+  }
 
 
     &-menu {
@@ -48,7 +54,7 @@
 
     &-titles {
       &--large {
-        @include font( $size: 140px );
+        @include font( $size: 140px, $line-height: 140px );
       }
       &--lg-up {
         @include font( $size: 48px, $text-transform: 'up' );
@@ -93,7 +99,7 @@
         @include font( $size: 16px );
       }
       &--md {
-        //@include font( $size: 14px );
+        @include font( $size: 14px ,$line-height: 28px );
       }
     }
 
@@ -106,6 +112,9 @@
     &-buttons {
       &--md-up {
         @include font( $size: 14px, $text-transform: 'up' );
+      }
+      &--md-1 {
+        @include font( $size: 16px );
       }
     }
 
@@ -160,7 +169,7 @@
     }
 
     &-tab-headers {
-      &-xs--md {
+      &-md--up {
         @include font( $size: 16px, $text-transform: 'up' );
       }
       &-xs--up {
@@ -168,11 +177,11 @@
       }
     }
 
-    &-progress-bars-header {
-      @include font( $size: 16px );
+    &-progress-bars-text {
+      @include font( $size: 16px, $line-height: 20px );
     }
     &-progress-bars-value {
-      @include font( $size: 14px );
+      @include font( $size: 14px, $line-height: 20px );
     }
 
     &-breadcrumbs {
@@ -215,6 +224,11 @@
     &-carousel-header {
       @include font( $size: 14px, $text-transform: 'up' );
     }
+
+
+  &-form-inputs {
+    @include font( $size: 14px );
+  }
 
 }
 

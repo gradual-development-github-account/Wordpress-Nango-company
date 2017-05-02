@@ -1,14 +1,52 @@
-.layout {
+.theme.modificators.margins {
   &.margin {
     &-title {
+      &--xs-1 {
+        margin-bottom: 10px;
+      }
+      &--sm {
+        margin-bottom: 15px;
+      }
+      &--sm-1 {
+        margin-bottom: 20px;
+      }
       &--md {
         margin-bottom: 30px;
+      }
+      &--md-2 {
+        margin-bottom: 40px;
+      }
+      &--md-1 {
+        margin-bottom: 45px;
       }
       &--lg {
         margin-bottom: 60px;
       }
     }
     &-paragraph {
+      &--sm {
+        margin-bottom: 15px;
+      }
+      &--sm-1 {
+        margin-bottom: 20px;
+      }
+      &--md {
+        margin-bottom: 30px;
+      }
+      &--md-1 {
+        margin-bottom: 45px;
+      }
+      &--lg {
+        margin-bottom: 60px;
+      }
+    }
+    &-item {
+      &--sm {
+        margin-bottom: 15px;
+      }
+      &--sm-2 {
+        margin-bottom: 25px;
+      }
       &--md {
         margin-bottom: 30px;
       }
@@ -16,12 +54,43 @@
         margin-bottom: 60px;
       }
     }
-    &-item {
+    &-item-title {
+      &--sm {
+        margin-bottom: 15px;
+      }
+    }
+
+    &-post {
+      &--sm-1 {
+        margin-bottom: 20px;
+      }
       &--md {
         margin-bottom: 30px;
       }
       &--lg {
         margin-bottom: 60px;
+      }
+    }
+    &-comment-date {
+      &--md {
+        margin-bottom: 20px;
+      }
+    }
+    &-comment-autor {
+      &--sm {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-table__row {
+      &--sm {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-icons-between {
+      &--md {
+        margin-right: 15px;
       }
     }
   }

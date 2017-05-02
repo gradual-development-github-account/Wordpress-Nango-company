@@ -3,3 +3,30 @@
     display: block;
   }
 }
+
+.theme.modificators.titles {
+  &.title--block {
+    display: block;
+  }
+
+  &.titles-with-line--inline-1 {
+    .text, .line {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .text {
+      margin-right: 45px;
+    }
+  }
+
+  &.titles-with-line--block-1 {
+    .text, .line {
+      display: block;
+    }
+    .text {
+      //margin-bottom: 10px;
+      //see page-portfolio line 53
+    }
+  }
+
+}
