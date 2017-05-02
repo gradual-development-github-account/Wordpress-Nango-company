@@ -6,6 +6,8 @@ $color-2-layout:        #F83700;
 $color-2-lighter-10-layout: lighten( $color-2-layout, 10% );
 
 $color-3-layout: #FE8C00;
+$color-3-op-0-5-layout: transparentize( $color-3-layout, 0.5 );
+
 $color-4-layout: #FAFAFA;
 
 $color-5-layout: #FFFFFF;
@@ -13,12 +15,15 @@ $color-5-op-0-5-layout: transparentize( $color-5-layout, 0.5 );
 $color-5-op-0-9-layout: transparentize( $color-5-layout, 0.9 );
 
 $color-6-layout: #000000;
+$color-6-opacity-50-layout: transparentize( $color-6-layout, 0.2 );
 $color-6-lighter-10-layout: lighten( $color-6-layout, 10% );
 
 $color-7-layout: #6fa9ff;
 
 $color-8-layout: #666666;
 $color-9-layout: #F2F2F2;
+$color-10-layout: #F5F5F5;
+
 
 $color-header-1: #57574F;
 /*Colors elements*/
