@@ -1,0 +1,52 @@
+.theme.modificators.sections {
+  &.section-1:first-child {
+    margin-top: 140px;
+    margin-bottom: 140px;
+  }
+  &.section-1:not(:first-child) {
+    margin-bottom: 140px;
+  }
+
+  &.section-aside-1 {
+    margin-bottom: 75px;
+  }
+
+
+
+  &.section-3 {
+    margin-bottom: 90px;
+  }
+
+  &.section-3-both {
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  &.section-4-both {
+    margin-top:    120px;
+    margin-bottom: 120px;
+  }
+
+  &.section-4 {
+    margin-bottom: 120px;
+  }
+
+  &.section-5 {
+    margin-bottom: 70px;
+  }
+
+  &.sections-3-with-divider {
+    .sections-3-with-divider__divider {
+      margin-top: 90px;
+    }
+    margin-bottom: 90px;
+  }
+
+}
+
+
+.theme.modificators.template-parts.sections {
+  &.full-height {
+    height: 100%;
+  }
+}

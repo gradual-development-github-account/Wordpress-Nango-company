@@ -1,0 +1,18 @@
+.theme.modificators.lines {
+  &.line-1--inline {
+    display: inline-block;
+    width:  20px;
+    height: 6px;
+  }
+  &.line-2--block {
+    display: block;
+    width:  160px;
+    height: 3px;
+  }
+
+  &.line-3--block {
+    display: block;
+    width:  30px;
+    height: 3px;
+  }
+}

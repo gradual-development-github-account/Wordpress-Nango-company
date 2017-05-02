@@ -1,0 +1,29 @@
+.theme.modificators.masks {
+
+   &.mask-1 {
+     background: linear-gradient( 180deg,
+       $color-5-layout 0%,
+       $color-5-layout 25%,
+       $color-5-op-0-5-layout 100%
+     );
+   }
+
+  &.mask-2 {
+    background: linear-gradient( 180deg,
+            $color-2-layout 0%,
+            $color-2-layout 25%,
+            $color-3-op-0-5-layout 100%
+    );
+  }
+
+  &.mask-3 {
+    transition: all 1s;
+    background-color: $color-6-opacity-50-layout;
+  }
+
+  &.mask--pointer-events-none {
+    pointer-events: none;
+    z-index: 4;
+  }
+
+}

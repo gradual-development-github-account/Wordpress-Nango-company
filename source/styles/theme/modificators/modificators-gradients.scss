@@ -1,0 +1,102 @@
+.theme.modificators.gradients {
+  &.text-gradient-1 {
+    background: -webkit-linear-gradient( $color-3-layout, $color-2-layout );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &.text-gradient-135-deg {
+    background: -webkit-linear-gradient( 135deg, $color-3-layout, $color-2-layout );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+  &.background-gradient-1 {
+    background: -webkit-linear-gradient( $color-2-layout, $color-3-layout );
+  }
+
+  &.background-gradient-0-deg {
+    background: -webkit-linear-gradient( 0deg, $color-2-layout, $color-3-layout );
+  }
+
+
+  &.svg-fill-gradient-1,
+  &.svg-stroke-gradient-1 {
+    .svg-gradient--start {
+      transition: all 0.5s;
+      stop-color: $color-6-layout;
+    }
+    .svg-gradient--end {
+      transition: all 0.5s;
+      stop-color: $color-6-layout;
+    }
+
+    &:hover {
+      .svg-gradient--start {
+        stop-color: $color-2-layout;
+      }
+      .svg-gradient--end {
+        stop-color: $color-3-layout;
+      }
+    }
+  }
+
+
+
+  &.svg-fill-gradient-2,
+  &.svg-stroke-gradient-2 {
+    .svg-gradient--start {
+      transition: all 0.5s;
+      stop-color: $color-5-layout;
+    }
+    .svg-gradient--end {
+      transition: all 0.5s;
+      stop-color: $color-5-layout;
+    }
+
+    &:hover {
+      .svg-gradient--start {
+        stop-color: $color-5-layout;
+      }
+      .svg-gradient--end {
+        stop-color: $color-2-layout;
+      }
+    }
+  }
+
+
+
+  &.button-gradient-1 {
+    .theme.modificators.gradients.svg-fill-gradient-1 {
+      .svg-gradient--start {
+        stop-color: $color-5-layout;
+      }
+      .svg-gradient--end {
+        stop-color: $color-5-layout;
+      }
+    }
+
+    &:hover {
+      .theme.modificators.gradients.svg-fill-gradient-1 {
+        .svg-gradient--start {
+          stop-color: $color-3-layout;
+        }
+        .svg-gradient--end {
+          stop-color: $color-2-layout;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
+
+

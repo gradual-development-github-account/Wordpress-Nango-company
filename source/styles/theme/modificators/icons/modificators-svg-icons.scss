@@ -1,0 +1,14 @@
+.theme.modificators.icons.svg-icons {
+
+  &--linear-gradient-1 {
+    .svg-gradient {
+      .svg-gradient--start {
+        stop-color: $color-2-layout;
+      }
+      .svg-gradient--end {
+        stop-color: $color-3-layout;
+      }
+    }
+  }
+
+}

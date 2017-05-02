@@ -1,0 +1,25 @@
+.theme.modificators.colors {
+  &.links-color-1 {
+    transition: all 0.5s;
+  }
+  &.links-color-1:hover {
+    fill: $color-2-layout;
+    color: $color-2-layout;
+  }
+
+  &.buttons-color-1 {
+    transition: all 0.5s;
+  }
+  &.buttons-color-1:hover {
+    fill: $color-2-layout;
+    color: $color-2-layout;
+  }
+  
+  &.color-5 {
+    color: $color-5-layout;
+  }
+  &.background-color-5 {
+    background-color: $color-5-layout;
+  }
+}
+
