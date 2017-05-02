@@ -1,0 +1,31 @@
+.theme.components.template-parts.page-portfolio {
+  .page-portfolio {
+    &__text {
+      margin-left: 160px;
+    }
+
+    &__list-categories {
+      margin-top: 270px;
+      margin-bottom: 90px;
+      .list-categories__item {
+        margin-bottom: 20px;
+      }
+    }
+    &__gallery {
+
+      .gallery__item {
+        margin-bottom: 60px;
+      }
+
+      .gallery__hover-block {
+        padding: 75px;
+      }
+
+      .gallery__image-wrapper {
+        height: 560px;
+        margin-bottom: 60px;
+      }
+    }
+
+  }
+}

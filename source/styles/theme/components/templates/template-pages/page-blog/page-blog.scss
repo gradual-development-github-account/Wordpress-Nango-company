@@ -1,0 +1,21 @@
+.theme.components.template-parts.page-blog {
+  .page-blog {
+    &__posts {
+      margin-bottom: -60px;
+    }
+    &__post-cols {
+      margin-bottom: 60px;
+    }
+    &__post-image-wrapper {
+      height: 260px;
+    }
+    &__post-hover-mask {
+      opacity: 0.5;
+    }
+
+    &__post-text {
+      padding: 45px;
+    }
+
+  }
+}

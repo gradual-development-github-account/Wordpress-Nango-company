@@ -1,0 +1,42 @@
+.theme.components.posts.post-footers.post-footer-1 {
+  .post-footer-1 {
+
+
+    &__image-profile {
+      width:  90px;
+      height: 90px;
+      border-radius: 50%;
+      border-width: 3px;
+      border-style: solid;
+      border-color: $color-9-layout;
+    }
+    &__desc-profile {
+      margin-left: 20px;
+    }
+
+    &__social-link {
+      margin-left: 20px;
+    }
+
+    &__col-1, &__col-2, &__col-3 {
+      display: flex;
+
+    }
+    &__col-1, &__col-3 {
+      justify-content: center;
+      flex-direction: column;
+    }
+    &__col-1 {
+      align-items: flex-start;
+    }
+    &__col-2 {
+      justify-content: center;
+      align-items: center;
+    }
+    &__col-3 {
+      align-items: flex-end;
+    }
+
+
+  }
+}

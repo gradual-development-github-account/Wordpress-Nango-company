@@ -1,0 +1,41 @@
+.theme.components.images-with-hover {
+  &.images-with-hover-1 {
+
+    position: relative;
+
+    .images-with-hover-1 {
+      &__image-wrapper {
+        overflow: hidden;
+      }
+      &__image {
+
+      }
+
+      &__hover-block {
+        transition: all 0.5s;
+        transform: translate( 0px, 0px );
+        opacity: 0.0;
+
+        position: absolute;
+        @include absolute_alignment();
+
+        .hover-block__mask {
+          @include absolute_alignment();
+        }
+        .hover-block__text {
+          @include absolute_alignment();
+          color: $color-5-layout;
+        }
+      }
+    }
+  }
+
+  &.images-with-hover-1:hover {
+    .images-with-hover-1 {
+      &__hover-block {
+        transform: translate(20px, 20px);
+        opacity: 0.75;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.theme.template-parts.footers.footer-1 {
+  min-height: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .widget-social-icons-1 {
+    .widgets__title {
+      display: none;
+    }
+
+    .widget-social-icons-1__link {
+      padding: 10px;
+    }
+  }
+}

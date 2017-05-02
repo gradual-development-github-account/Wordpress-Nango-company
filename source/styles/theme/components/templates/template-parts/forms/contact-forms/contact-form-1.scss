@@ -1,0 +1,38 @@
+.theme.template-parts.forms.contact-form-1 {
+  .contact-form-1 {
+
+  }
+
+  input {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-color: $color-8-layout;
+    border-bottom-style: solid;
+    border-radius: 0;
+
+    background-color: transparent;
+
+    transition: all 0.5s;
+  }
+
+
+  textarea {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-color: $color-8-layout;
+    border-bottom-style: solid;
+    border-radius: 0;
+
+    background-color: transparent;
+
+    transition: all 0.5s;
+  }
+}

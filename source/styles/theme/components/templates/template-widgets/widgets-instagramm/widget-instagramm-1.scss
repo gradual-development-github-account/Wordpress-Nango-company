@@ -1,0 +1,18 @@
+.theme.template-parts.widgets.widget-instagramm-list-1 {
+  .widget-instagramm-list-1 {
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__row {
+      margin-left:  -5px;
+      margin-right: -5px;
+    }
+
+    &__col {
+      padding-left:  5px;
+      padding-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}

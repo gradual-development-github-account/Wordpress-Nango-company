@@ -1,0 +1,39 @@
+.theme.components.comments.comments-1 {
+  .comments-1 {
+    &__comment-wrapper {
+      margin-bottom: 40px;
+    }
+    &__comment {
+      max-width: 860px;
+      padding: 45px;
+      background-color: $color-9-layout;
+      display: flex;
+      margin-bottom: 40px;
+    }
+    &__reply-wrapper {
+      margin-left:   100px;
+      margin-bottom: 40px;
+    }
+    &__reply {
+      max-width: 860px;
+      padding: 45px;
+      background-color: $color-9-layout;
+      display: flex;
+
+      margin-bottom: 40px;
+    }
+
+
+    &__image-profile {
+      width:  90px;
+      height: 90px;
+      border-radius: 50%;
+      border-width: 3px;
+      border-style: solid;
+      border-color: $color-1-layout;
+    }
+    &__text {
+      margin-left: 30px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.theme.components.progress-bars {
+  &.progress-bar-1 {
+    .progress-bar-1__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .progress-bar-1__body {
+      position: relative;
+
+      .body__progress {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 10%;
+      }
+    }
+  }
+}

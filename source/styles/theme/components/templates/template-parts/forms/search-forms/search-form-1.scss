@@ -1,0 +1,16 @@
+.theme.template-parts.forms.search-form-1 {
+  input {
+    width: 100%;
+    padding: 20px;
+    line-height: 20px;
+
+    border-width: 1px;
+    border-color: $color-8-layout;
+    border-style: solid;
+    border-radius: calc( 20px + 20px / 2 );
+
+    background-color: transparent;
+
+    transition: all 0.5s;
+  }
+}

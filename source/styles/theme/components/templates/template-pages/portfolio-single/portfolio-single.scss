@@ -1,0 +1,11 @@
+.theme.components.template-parts.page-portfolio-single {
+  .page-portfolio-single {
+    &__image-wrapper {
+      height: 85vh;
+    }
+    &__carousel-buttons {
+      color: $color-5-layout;
+      fill: $color-5-layout;
+    }
+  }
+}
