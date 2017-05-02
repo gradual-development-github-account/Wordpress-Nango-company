@@ -1,4 +1,19 @@
 .vendor.components.semantic-ui.main-nav-1 {
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    background-color: $color-2-layout;
+  }
+
+
+  .hamburger:hover {
+    opacity: 1;
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      background-color: $color-3-layout;
+    }
+  }
+
+
+
+
   .ui.dropdown .main-nav-1__menu > .item {
     padding: 0;
 
@@ -35,7 +50,5 @@
 
 
 
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    background-color: $color-2-layout;
-  }
+
 }

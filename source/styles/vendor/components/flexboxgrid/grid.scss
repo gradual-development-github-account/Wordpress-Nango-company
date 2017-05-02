@@ -1,6 +1,37 @@
 .vendor.components.flexboxgrid {
+  &.container-300 {
+    //width: 300px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    box-sizing: border-box;
+  }
+
+  &.container-600 {
+    //width: 600px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    box-sizing: border-box;
+  }
+
   &.container-1200 {
-    width: 1200px;
+    //width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    box-sizing: border-box;
+  }
+
+  &.container-1800 {
+    //width: 1800px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    box-sizing: border-box;
+  }
+
+  &.container-1200--half-lg {
     padding-left: 15px;
     padding-right: 15px;
 
@@ -14,11 +45,11 @@
     box-sizing: border-box;
   }
 
+  &.row {
 
+  }
 
-
-
-  .row {
+  &.col {
 
   }
 

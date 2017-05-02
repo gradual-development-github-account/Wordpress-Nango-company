@@ -1,42 +1,65 @@
 .vendor.components.flexboxgrid {
-  &.container-1200 {
-    width: 100%;
+  //Phones with low resolution ( *-xs-* )
+    &.container-300 {
+      width: 300px;
+    }
+
+    &.container-600 {
+      width: 600px;
+    }
+
+    &.container-1200 {
+      width: 100%;
+    }
+
+    &.container-1800 {
+      width: 100%;
+    }
+
+
+  //Phones ( *-sm-* )
+  @media ( min-width: 768px ) {
+    &.container-300 {
+      width: auto;
+    }
+
+    &.container-600 {
+      width: auto;
+    }
   }
-}
 
 
+  //Tabs ( *-md-* )
+  @media ( min-width: 992px ) {
+
+  }
 
 
-//Phones
-@media ( min-width: 768px ) {
-
-}
-
-
-
-
-//Tabs
-@media ( min-width: 992px ) {
-
-}
-
-
-
-
-//Desktops and tabs
-@media ( min-width: 1200px ) {
-  .vendor.components.flexboxgrid {
+  //Desktops HD ( *-lg-* )
+  @media ( min-width: 1200px ) {
     &.container-1200 {
       width: 1200px;
     }
   }
+
+
+  //Desktops FHD ( *-1800-* )
+  @media ( min-width: 1800px ) {
+    &.container-1800 {
+      width: 1800px;
+    }
+
+    .col-1800-4 {
+      flex-basis: 33.333%;
+      max-width:  33.333%;
+    }
+
+    .col-1800-6 {
+      flex-basis: 50%;
+      max-width:  50%;
+    }
+  }
 }
-
-
-
-
-
-
 
 
 
