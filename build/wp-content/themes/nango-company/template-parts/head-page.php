@@ -9,5 +9,5 @@
     <title></title>
     <?php wp_head(); ?>
   </head>
-  <body>
+  <body class="theme  modificators  fonts  font-family-1  fonts-body">
 <!--  <h3>include styles and metatags</h3>-->

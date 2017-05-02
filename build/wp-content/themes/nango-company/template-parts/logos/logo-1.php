@@ -1,7 +1,7 @@
 <div class="theme  components  template-parts  logos  logo-1
             theme  modificators  behaviors  animation  logos
             vendor  modificators  flexboxgrid  flex-container  container--align-items-center  container--wrap">
-  <svg  class="theme  modificators  gradients  svg-gradient-1"  width="100"  height="100"  viewBox="0 0 172.73 190.58">
+  <svg  class="theme  modificators  gradients  svg-fill-gradient-1"  width="100"  height="100"  viewBox="0 0 172.73 190.58">
     <linearGradient class="svg-gradient">
       <stop class="svg-gradient--start" offset="0%" stop-color=""/>
       <stop class="svg-gradient--end"   offset="100%" stop-color=""/>
@@ -13,32 +13,6 @@
       <polygon class="cls-4" points="90.26 172.58 23.38 133.97 23.38 108.85 90.26 147.46 90.26 147.46 90.26 129.47 90.26 129.47 7.79 81.86 7.79 142.97 90.26 190.58 90.26 190.58 90.26 172.58 90.26 172.58"/>
       <polygon class="cls-5" points="31.17 52.24 52.92 39.68 90.26 61.24 90.26 43.24 52.92 21.68 30.36 34.71 0 52.24 90.26 104.35 90.26 104.35 90.26 86.36 31.17 52.24"/>
     </g>
-  </svg>
-
-
-  <svg  class="theme  modificators  gradients  svg-gradient-1"  width="200" height="50" >
-    <defs>
-      <linearGradient class="svg-gradient"
-                      id="liGr-156xv1c"
-                      x1="0" y1="0" x2="100%" y2="0%">
-        <stop class="svg-gradient--start" offset="0%" stop-color=""/>
-        <stop class="svg-gradient--end"   offset="100%" stop-color=""/>
-      </linearGradient>
-
-      <pattern id="p-gradient"
-               patternUnits="userSpaceOnUse"
-               width="200" height="50"
-               viewbox="0 0 200 50">
-        <rect class="svg-path"
-              fill="url(#liGr-156xv1c)"
-              width="200"  height="50"/>
-      </pattern>
-    </defs>
-
-    <text
-        class="theme  modificators  fonts  font-family-4  fonts-titles--md"
-        x="0%" y="100%"
-        fill="url(#p-gradient)">Company</text>
   </svg>
 </div>
 
