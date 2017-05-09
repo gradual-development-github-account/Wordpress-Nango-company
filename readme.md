@@ -30,3 +30,9 @@
 Фреймворки:
 
 * ``Semantic UI``
+
+
+Wordpress плагины:
+
+* ``Meta Box``
+* ``WP User Avatars``
