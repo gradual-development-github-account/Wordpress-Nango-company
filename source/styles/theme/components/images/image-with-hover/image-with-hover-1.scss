@@ -12,6 +12,7 @@
       }
 
       &__hover-block {
+        display: block;
         transition: all 0.5s;
         transform: translate( 0px, 0px );
         opacity: 0.0;
