@@ -1,0 +1,1 @@
+<h1>Categories common template</h1>
