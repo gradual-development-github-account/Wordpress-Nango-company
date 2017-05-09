@@ -18,7 +18,12 @@ Template Name: Blog single page
   </div>
 
   <main class="theme  modificators  containers  full-width">
-    
+
+    <!--Post-->
+    <?php //var_dump( $post ); ?>
+
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
     <section class="theme  modificators  sections  section-3">
       <div class="vendor  components  flexboxgrid  container-1200
                   vendor modificators  flexboxgrid  container--center">
@@ -27,72 +32,104 @@ Template Name: Blog single page
 
             <div class="page-blog-single__post-image
                         theme  components  images  image-wrapper">
-              <img class="theme  modificators  images  image--max-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/blog-single/blog-single-1.jpg'; ?>" alt="alt">
+              <?php $post_main_image_in_post = rwmb_meta( 'nango_blog_main_image_in_post', array(), get_the_ID() ); ?>
+              <?php if ( !empty( $post_main_image_in_post ) ) { ?>
+                  <?php foreach ( $post_main_image_in_post as $image ) {  ?>
+                    <img class="theme  modificators  images  image--full-width" src="<?php echo esc_url( $image['full_url'] ); ?>" alt="alt">
+                  <?php } ?>
+              <?php } ?>
             </div>
 
               <h1 class="theme  modificators  fonts  font-family-4  fonts-titles--md
                          theme  modificators  margins  margin-title--sm">
-                <span class="text">How to Learn Photoshop Properly</span>
+                <span class="text"><?php the_title(); ?></span>
+
               </h1>
 
-              <div class="ui breadcrumb
-                          theme  modificators  margins  margin-paragraph--md">
-                <a class="section">Home</a>
-                <div class="divider"> / </div>
-                <a class="section">Store</a>
-                <div class="divider"> / </div>
-                <div class="active section">T-Shirt</div>
+
+              <div class="theme  modificators  fonts  font-family-3
+                          theme  modificators  margins  margin-paragraph--sm">
+                <?php the_breadcrumb(); ?>
               </div>
 
 
+              <div class="theme  modificators  margins  margin-paragraph--md">Дата публикации: <?php the_date(); ?></div>
+
             <div class="vendor  components  flexboxgrid  row">
               <div class="vendor  components  flexboxgrid  col  col-sm-8">
-                <p class="theme  modificators  fonts  fonts-paragraph--justify
-                              theme  modificators  fonts  fonts-paragraphs--md
-                              theme  modificators  margins  margin-paragraph--md">
-                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, aut dicta dignissimos dolorum eos explicabo fuga illum ipsam minima modi numquam quae quasi quidem unde velit voluptates! Beatae, ea!</span><span>Ducimus in incidunt labore suscipit voluptatem! Aut excepturi minima perspiciatis reprehenderit sit soluta tenetur. Aperiam aut consequatur consequuntur, corporis cumque dolor ex facere facilis incidunt laudantium, praesentium sint vel, voluptatibus?</span>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, aut dicta dignissimos dolorum eos explicabo fuga illum ipsam minima modi numquam quae quasi quidem unde velit voluptates! Beatae, ea!</span><span>Ducimus in incidunt labore suscipit voluptatem! Aut excepturi minima perspiciatis reprehenderit sit soluta tenetur. Aperiam aut consequatur consequuntur, corporis cumque dolor ex facere facilis incidunt laudantium, praesentium sint vel, voluptatibus?</span>
-                </p>
-                <p class="theme  modificators  fonts  fonts-paragraph--justify
-                              theme  modificators  fonts  fonts-paragraphs--md
-                              theme  modificators  margins  margin-paragraph--md">
-                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, aut dicta dignissimos dolorum eos explicabo fuga illum ipsam minima modi numquam quae quasi quidem unde velit voluptates! Beatae, ea!</span><span>Ducimus in incidunt labore suscipit voluptatem! Aut excepturi minima perspiciatis reprehenderit sit soluta tenetur. Aperiam aut consequatur consequuntur, corporis cumque dolor ex facere facilis incidunt laudantium, praesentium sint vel, voluptatibus?</span>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, aut dicta dignissimos dolorum eos explicabo fuga illum ipsam minima modi numquam quae quasi quidem unde velit voluptates! Beatae, ea!</span><span>Ducimus in incidunt labore suscipit voluptatem! Aut excepturi minima perspiciatis reprehenderit sit soluta tenetur. Aperiam aut consequatur consequuntur, corporis cumque dolor ex facere facilis incidunt laudantium, praesentium sint vel, voluptatibus?</span>
-                </p>
-                <p class="theme  modificators  fonts  fonts-paragraph--justify
-                              theme  modificators  fonts  fonts-paragraphs--md
-                              theme  modificators  margins  margin-paragraph--md">
-                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, aut dicta dignissimos dolorum eos explicabo fuga illum ipsam minima modi numquam quae quasi quidem unde velit voluptates! Beatae, ea!</span><span>Ducimus in incidunt labore suscipit voluptatem! Aut excepturi minima perspiciatis reprehenderit sit soluta tenetur. Aperiam aut consequatur consequuntur, corporis cumque dolor ex facere facilis incidunt laudantium, praesentium sint vel, voluptatibus?</span>
-                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, aut dicta dignissimos dolorum eos explicabo fuga illum ipsam minima modi numquam quae quasi quidem unde velit voluptates! Beatae, ea!</span><span>Ducimus in incidunt labore suscipit voluptatem! Aut excepturi minima perspiciatis reprehenderit sit soluta tenetur. Aperiam aut consequatur consequuntur, corporis cumque dolor ex facere facilis incidunt laudantium, praesentium sint vel, voluptatibus?</span>
-                </p>
+                <div class="page-blog-single__content
+                            theme  modificators  fonts  fonts-paragraph--justify
+                            theme  modificators  fonts  fonts-paragraphs--md
+                            theme  modificators  margins  margin-paragraph--sm-1">
+
+                  <?php the_content(); ?>
+                </div>
 
                 <!--Post Footer-->
-                <div class="page-blog-single__post-footer
+                <footer class="page-blog-single__post-footer
                             theme  components  posts  post-footers  post-footer-1">
+
                   <div class="ui divider"></div>
                   <div class="vendor  components  flexboxgrid  row">
                     <div class="post-footer-1__col-1
                                 vendor  components  flexboxgrid  col  col-sm-4">
-                      <span class="theme  components  titles
-                                   theme  modificators  margins  margin-title--xs-1
-                                   theme  modificators  fonts  font-family-3  fonts-titles--xs-1-up">Tags</span>
-                      <div>
-                        <a href="#" class="post-footer-1__tag">Graphics</a>
-                        <a href="#" class="post-footer-1__tag">Graphics</a>
-                        <a href="#" class="post-footer-1__tag">Graphics</a>
+
+                      <div class="theme  modificators  margins  margin-post-taxonomy--md">
+                        <span class="theme  components  titles
+                                     theme  modificators  margins  margin-title--xs-1
+                                     theme  modificators  fonts  font-family-3  fonts-titles--xs-1-up">Теги:</span>
+                        <div>
+
+                          <div class="theme  modificators  fonts  font-family-3
+                                      theme  modificators  colors  links-color-2--inheritage">
+                            <?php $cur_terms_tags = get_the_terms( get_the_ID(), 'tax-blog-tags' ); ?>
+                            <?php if ( !empty( $cur_terms_tags ) ) { ?>
+                                <?php foreach( $cur_terms_tags as $cur_term ) { ?>
+                                  <a href="<?php echo get_term_link( (int)$cur_term->term_id, $cur_term->taxonomy ); ?>"><?php echo $cur_term->name; ?></a>  <br>
+                                <?php } ?>
+                            <?php } ?>
+                          </div>
+                        </div>
                       </div>
+
+                      <div>
+                        <span class="theme  components  titles
+                                     theme  modificators  margins  margin-title--xs-1
+                                     theme  modificators  fonts  font-family-3  fonts-titles--xs-1-up">Категории:</span>
+                        <div>
+
+                          <div class="theme  modificators  fonts  font-family-3
+                                      theme  modificators  colors  links-color-2--inheritage">
+                            <?php $cur_terms_categories = get_the_terms( get_the_ID(), 'tax-blog-categories' ); ?>
+                            <?php if ( !empty( $cur_terms_categories ) ) { ?>
+                                <?php foreach( $cur_terms_categories as $cur_term ) { ?>
+                                  <a href="<?php echo get_term_link( (int)$cur_term->term_id, $cur_term->taxonomy ); ?>"><?php echo $cur_term->name; ?></a>  <br>
+                                <?php } ?>
+                            <?php } ?>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
 
                     <div class="post-footer-1__col-2
                                 vendor  components  flexboxgrid  col  col-sm-4">
                       <div class="post-footer-1__image-profile
                                       theme  components  images  image-wrapper">
-                        <img class="theme  modificators  images  image--max-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/blog-single/post-footer-1__image-profile.jpg'; ?>" alt="alt">
+                        <img class="theme  modificators  images  image--max-width" src="<?php echo get_avatar_url( get_the_author_meta('ID') ); ?>" alt="alt">
                       </div>
                       <div class="post-footer-1__desc-profile">
                         <h4 class="theme  modificators  margins  margin-title--xs-1
-                                   theme  modificators  fonts  font-family-4  fonts-titles--xs">Rocian Osiris</h4>
-                        <span>Bloger</span>
+                                   theme  modificators  fonts  font-family-4  fonts-titles--xs"><?php the_author_meta('nickname'); ?></h4>
+
+                        <p class="theme  modificators  margins  margin-post-autor-name--md">
+                          <span> <?php the_author_meta('first_name'); ?></span>
+                          <span> <?php the_author_meta('last_name'); ?></span>
+                        </p>
+
+                        <p class="theme  modificators  colors  color-11">
+                          <?php the_author_meta('description'); ?>
+                        </p>
                       </div>
                     </div>
 
@@ -191,7 +228,7 @@ Template Name: Blog single page
                     </div>
                   </div>
                   <div class="ui divider"></div>
-                </div>
+                </footer>
                 <!--Post Footer-->
               </div>
             </div>
@@ -201,7 +238,14 @@ Template Name: Blog single page
       </div>
     </section>
 
+    <?php endwhile; ?>
 
+    <?php else: ?>
+    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+    <?php endif; ?>
+    <!--Post-->
+
+    <!--Related posts-->
     <section class="theme  modificators  sections  sections-3-with-divider">
       <?php get_template_part('template-parts/sections/sections-related-posts/section-related-posts-1'); ?>
 
@@ -215,8 +259,9 @@ Template Name: Blog single page
         </div>
       </div>
     </section>
+    <!--Related posts-->
 
-
+    <!--Comments-->
     <section class="theme  modificators  sections  sections-3-with-divider">
       <div class="vendor  components  flexboxgrid  container-1200
                   vendor modificators  flexboxgrid  container--center">
@@ -248,8 +293,9 @@ Template Name: Blog single page
         </div>
       </div>
     </section>
+    <!--Comments-->
 
-
+    <!--Comments form-->
     <section class="theme  modificators  sections  section-3">
       <div class="vendor  components  flexboxgrid  container-1200
                   vendor modificators  flexboxgrid  container--center">
@@ -273,6 +319,7 @@ Template Name: Blog single page
         </div>
       </div>
     </section>
+    <!--Comments form-->
     
   </main>
 

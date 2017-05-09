@@ -26,51 +26,27 @@ Template Name: Portfolio page
         <div class="vendor  components  flexboxgrid  col  col-md-6">
 
           <div class="page-portfolio__gallery">
-            
-            <!--Component image with hover-->
-            <div class="gallery__item
-                        theme  components  images-with-hover  images-with-hover-1">
-              <div class="gallery__image-wrapper
-                          image-wrapper
-                          images-with-hover-1__image-wrapper">
-                <img class="
-                            images-with-hover-1__image
-                            theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio/portfolio-1/portfolio-1-1.jpg'; ?>" alt="alt">
-              </div>
-              <div class="images-with-hover-1__hover-block">
-                <div class="hover-block__mask
-                            theme  modificators  gradients  background-gradient-1"></div>
-                <div class="gallery__hover-block
-                            hover-block__text
-                            theme  modificators  colors  color-5
-                            vendor  modificators  flexboxgrid  flex-container  container--direction-column  container--justify-content-center">
-                  <h3 class="theme  modificators  titles  titles-with-line--block-1
-                             theme  modificators  fonts  font-family-4  fonts-titles--md-1
-                             theme  modificators  margins  margin-title--sm-1">
-                    <span class="text
-                                 theme  components  containers  block-container
-                                 theme  modificators  margins  margin-title--sm-1">Project 10</span>
-                    <div class="line
-                                theme  modificators  lines  line-2--block
-                                theme  modificators  colors  background-color-5"></div>
-                  </h3>
-                  <span class="theme  modificators  fonts  font-family-3  fonts-titles--xs-1-up">Graphics design</span>
-                </div>
-              </div>
-            </div>
-            <!--Component image with hover-->
+
+            <?php $Portfolio_posts = new WP_Query( array(
+                'post_type'      => 'portfolio',
+                'posts_per_page' => 3,
+                'order'          => 'DESC'
+            )); ?>
+
+            <?php if ( $Portfolio_posts->have_posts() ) : while ( $Portfolio_posts->have_posts() ) : $Portfolio_posts->the_post(); ?>
 
             <!--Component image with hover-->
             <div class="gallery__item
                         theme  components  images-with-hover  images-with-hover-1">
               <div class="gallery__image-wrapper
                           image-wrapper
+                          theme  components  images  image-wrapper
                           images-with-hover-1__image-wrapper">
                 <img class="
                             images-with-hover-1__image
-                            theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio/portfolio-1/portfolio-1-1.jpg'; ?>" alt="alt">
+                            theme  modificators  images-with-hover  image--full-width" src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="alt">
               </div>
-              <div class="images-with-hover-1__hover-block">
+              <a class="images-with-hover-1__hover-block" href="<?php the_permalink(); ?>">
                 <div class="hover-block__mask
                             theme  modificators  gradients  background-gradient-1"></div>
                 <div class="gallery__hover-block
@@ -82,82 +58,24 @@ Template Name: Portfolio page
                              theme  modificators  margins  margin-title--sm-1">
                     <span class="text
                                  theme  components  containers  block-container
-                                 theme  modificators  margins  margin-title--sm-1">Project 10</span>
+                                 theme  modificators  margins  margin-title--sm-1"><?php the_title(); ?></span>
                     <div class="line
                                 theme  modificators  lines  line-2--block
                                 theme  modificators  colors  background-color-5"></div>
                   </h3>
-                  <span class="theme  modificators  fonts  font-family-3  fonts-titles--xs-1-up">Graphics design</span>
+                  <span class="theme  modificators  fonts  font-family-3  fonts-titles--xs-1-up"><?php the_content(); ?></span>
                 </div>
-              </div>
+              </a>
             </div>
             <!--Component image with hover-->
 
-            <!--Component image with hover-->
-            <div class="gallery__item
-                        theme  components  images-with-hover  images-with-hover-1">
-              <div class="gallery__image-wrapper
-                          image-wrapper
-                          images-with-hover-1__image-wrapper">
-                <img class="
-                            images-with-hover-1__image
-                            theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio/portfolio-1/portfolio-1-1.jpg'; ?>" alt="alt">
-              </div>
-              <div class="images-with-hover-1__hover-block">
-                <div class="hover-block__mask
-                            theme  modificators  gradients  background-gradient-1"></div>
-                <div class="gallery__hover-block
-                            hover-block__text
-                            theme  modificators  colors  color-5
-                            vendor  modificators  flexboxgrid  flex-container  container--direction-column  container--justify-content-center">
-                  <h3 class="theme  modificators  titles  titles-with-line--block-1
-                             theme  modificators  fonts  font-family-4  fonts-titles--md-1
-                             theme  modificators  margins  margin-title--sm-1">
-                    <span class="text
-                                 theme  components  containers  block-container
-                                 theme  modificators  margins  margin-title--sm-1">Project 10</span>
-                    <div class="line
-                                theme  modificators  lines  line-2--block
-                                theme  modificators  colors  background-color-5"></div>
-                  </h3>
-                  <span class="theme  modificators  fonts  font-family-3  fonts-titles--xs-1-up">Graphics design</span>
-                </div>
-              </div>
-            </div>
-            <!--Component image with hover-->
+            <?php endwhile; ?>
 
-            <!--Component image with hover-->
-            <div class="gallery__item
-                        theme  components  images-with-hover  images-with-hover-1">
-              <div class="gallery__image-wrapper
-                          image-wrapper
-                          images-with-hover-1__image-wrapper">
-                <img class="
-                            images-with-hover-1__image
-                            theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio/portfolio-1/portfolio-1-1.jpg'; ?>" alt="alt">
-              </div>
-              <div class="images-with-hover-1__hover-block">
-                <div class="hover-block__mask
-                            theme  modificators  gradients  background-gradient-1"></div>
-                <div class="gallery__hover-block
-                            hover-block__text
-                            theme  modificators  colors  color-5
-                            vendor  modificators  flexboxgrid  flex-container  container--direction-column  container--justify-content-center">
-                  <h3 class="theme  modificators  titles  titles-with-line--block-1
-                             theme  modificators  fonts  font-family-4  fonts-titles--md-1
-                             theme  modificators  margins  margin-title--sm-1">
-                    <span class="text
-                                 theme  components  containers  block-container
-                                 theme  modificators  margins  margin-title--sm-1">Project 10</span>
-                    <div class="line
-                                theme  modificators  lines  line-2--block
-                                theme  modificators  colors  background-color-5"></div>
-                  </h3>
-                  <span class="theme  modificators  fonts  font-family-3  fonts-titles--xs-1-up">Graphics design</span>
-                </div>
-              </div>
-            </div>
-            <!--Component image with hover-->
+            <?php else: ?>
+              <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+            <?php endif; ?>
+
+            <?php wp_reset_postdata(); ?>
 
           </div>
 
@@ -185,10 +103,10 @@ Template Name: Portfolio page
                 <a class="theme  modificators  colors links-color-1" href="#">UI</a>
               </li>
               <li class="list-categories__item">
-                <a class="theme  modificators  colors links-color-1" href="#">UX</a>
+                <a class="theme  modificators  colors links-color-1" href="#">Design</a>
               </li>
               <li class="list-categories__item">
-                <a class="theme  modificators  colors links-color-1" href="#">Design</a>
+                <a class="theme  modificators  colors links-color-1" href="#">HTML/CSS</a>
               </li>
               <li class="list-categories__item">
                 <a class="theme  modificators  colors links-color-1" href="#">Wordpress</a>

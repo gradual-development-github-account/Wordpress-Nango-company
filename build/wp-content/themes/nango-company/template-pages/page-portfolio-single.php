@@ -19,8 +19,10 @@ Template Name: Portfolio single page
 
 
   <main class="theme  modificators  containers  full-width">
-
     <section class="theme  modificators  sections  section-4-both">
+
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+      
       <section class="theme  modificators  sections  section-4">
         <div class="vendor  components  flexboxgrid  container-1200
                       vendor modificators  flexboxgrid  container--center">
@@ -34,40 +36,24 @@ Template Name: Portfolio single page
                           js-swiper-slider-1-items-1">
                 <div class="swiper-wrapper">
 
-                  <div class="swiper-slide">
-                    <div class="theme  components  containers  block-container
-                          page-portfolio-single__image-wrapper">
-                      <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio-single/portfolio-single-1.jpg'; ?>" alt="alt">
-                    </div>
-                  </div>
+                  <?php
+                  $single_project_images = rwmb_meta( 'nango_portfolio_single-gallery', array(), get_the_ID() );
 
-                  <div class="swiper-slide">
-                    <div class="theme  components  containers  block-container
-                          page-portfolio-single__image-wrapper">
-                      <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio-single/portfolio-single-1.jpg'; ?>" alt="alt">
-                    </div>
-                  </div>
+                  if ( !empty( $single_project_images ) ) {
+                      foreach ( $single_project_images as $image ) {
+                  ?>
 
-                  <div class="swiper-slide">
-                    <div class="theme  components  containers  block-container
+                    <div class="swiper-slide">
+                      <div class="theme  components  containers  block-container
                           page-portfolio-single__image-wrapper">
-                      <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio-single/portfolio-single-1.jpg'; ?>" alt="alt">
+                        <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo esc_url( $image['full_url'] ) ?>" alt="alt">
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="swiper-slide">
-                    <div class="theme  components  containers  block-container
-                          page-portfolio-single__image-wrapper">
-                      <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio-single/portfolio-single-1.jpg'; ?>" alt="alt">
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <div class="theme  components  containers  block-container
-                          page-portfolio-single__image-wrapper">
-                      <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/pages/portfolio-single/portfolio-single-1.jpg'; ?>" alt="alt">
-                    </div>
-                  </div>
+                  <?php
+                      }
+                  }
+                  ?>
 
                 </div>
 
@@ -116,28 +102,25 @@ Template Name: Portfolio single page
                 <h1 class="theme  components  titles  titles-with-line  titles-with-line-1
                            theme  modificators  fonts  font-family-4  fonts-titles--lg
                            theme  modificators  margins  margin-title--sm">
-                  <span class="text">White Building</span>
+                  <span class="text"><?php the_title(); ?></span>
                   <div class="line
                               theme  modificators  lines  line-1--inline
                               theme  modificators  gradients  background-gradient-0-deg"></div>
                 </h1>
-                <p class="theme  modificators  fonts  font-family-3  fonts-titles--xs-up">Once of our projects</p>
+                <p class="theme  modificators  fonts  font-family-3  fonts-titles--xs-up"><?php echo rwmb_meta( 'nango_portfolio_single-sub-title', array(), get_the_ID() ); ?></p>
               </section>
 
 
               <section class="theme  modificators  sections  section-5">
                 <h2 class="theme  components  titles
                            theme  modificators  fonts  font-family-4  fonts-titles--sm
-                           theme  modificators  margins  margin-title--sm-1">Project description</h2>
-                <p class="theme  modificators  fonts  fonts-paragraph--justify
+                           theme  modificators  margins  margin-title--sm-1"><?php echo rwmb_meta( 'nango_portfolio_single-title-description', array(), get_the_ID() ); ?></h2>
+                <div class="theme  modificators  fonts  fonts-paragraph--justify
                           theme  modificators  fonts  fonts-paragraphs--md
                           theme  modificators  margins  margin-paragraph--md">
-                  Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula por.
-                </p>
-                <p class="theme  modificators  fonts  fonts-paragraph--justify
-                          theme  modificators  fonts  fonts-paragraphs--md">
-                  Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue.
-                </p>
+                  <?php the_content(); ?>
+                </div>
+
               </section>
 
 
@@ -148,7 +131,7 @@ Template Name: Portfolio single page
                   <div class="theme  components  tables  table-detail-item-1">
                     <h2 class="theme  components  titles
                          theme  modificators  fonts  font-family-4  fonts-titles--sm
-                         theme  modificators  margins  margin-title--sm-1">Details</h2>
+                         theme  modificators  margins  margin-title--sm-1"><?php echo rwmb_meta( 'nango_portfolio_single-characteristics', array(), get_the_ID() ); ?></h2>
                     <div class="table">
                       <div class="table__col">
                         <div class="table__row
@@ -157,7 +140,7 @@ Template Name: Portfolio single page
                         </div>
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
-                          Category
+                          Категории
                         </div>
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
@@ -167,19 +150,26 @@ Template Name: Portfolio single page
                       <div class="table__col">
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
-                          October, 18th, 2016
+                          <?php echo rwmb_meta( 'nango_portfolio_single-release-date', array(), get_the_ID() ); ?>
                         </div>
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
+
                           <ul>
-                            <li>Graphic Design</li>
-                            <li>Photography</li>
-                            <li>Web Development</li>
+                            <?php $portfolio_single_categories = get_the_terms( get_the_ID(), 'tax-portfolio-categories' ); ?>
+                            <?php if ( !empty( $portfolio_single_categories ) ) { ?>
+                              <?php foreach( $portfolio_single_categories as $cur_term ) { ?>
+                                <li>
+                                  <a href="<?php echo get_term_link( (int)$cur_term->term_id, $cur_term->taxonomy ); ?>"><?php echo $cur_term->name; ?></a>
+                                </li>
+                              <?php } ?>
+                            <?php } ?>
                           </ul>
+
                         </div>
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
-                          Crophos Company Inc.
+                          <?php echo rwmb_meta( 'nango_portfolio_single-client', array(), get_the_ID() ); ?>
                         </div>
                       </div>
                     </div>
@@ -203,11 +193,21 @@ Template Name: Portfolio single page
           </div>
         </div>
       </section>
+
+      <?php endwhile; ?>
+
+      <?php else: ?>
+        <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+      <?php endif; ?>
+      
+      <!--Related projects-->
       <section>
         <?php get_template_part('template-parts/sections/sections-related-projects/section-related-projects-1'); ?>
       </section>
+      <!--Related projects-->
+      
+      
     </section>
-
   </main>
 
 
