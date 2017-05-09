@@ -4,6 +4,20 @@
     <div class="vendor  components  flexboxgrid  row">
       <div class="vendor  components  flexboxgrid  col  col-xs-12">
 
+        <?php
+        $related_Posts_slider = new WP_Query( array(
+            'post_type'    => 'blog',
+            'author'       =>  get_the_author_meta('ID'),
+            'post__not_in' =>  array( get_the_ID() )
+        ));
+        ?>
+
+
+        <?php if ( $related_Posts_slider -> found_posts >= 1 ) { ?>
+
+        <!--Carousel for related posts-->
+
+
         <!--Carousel buttons-->
         <div class="vendor   modificators  flexboxgrid  flex-container  container--justify-content-space-between
                     theme  modificators  margins  margin-title--md-1">
@@ -14,6 +28,8 @@
                           theme  modificators  lines  line-1--inline
                           theme  modificators  gradients  background-gradient-0-deg"></div>
           </h2>
+
+          <?php if ( $related_Posts_slider -> found_posts >= 4 ) { ?>
 
           <div class="vendor   modificators  flexboxgrid  flex-container  container--align-items-flex-end">
             <button class="section-related-posts-1__carousel-button
@@ -41,92 +57,53 @@
               </svg>
             </button>
           </div>
+
+          <?php } ?>
+
         </div>
         <!--Carousel buttons-->
 
-        <!--Carousel-->
+
+        <!--Carousel body-->
         <div class="vendor  components  swiper-slider  swiper-container
                     js-swiper-slider-3-items-1">
 
-
           <div class="swiper-wrapper">
 
+            <?php if ( $related_Posts_slider->have_posts() ) : while ( $related_Posts_slider->have_posts() ) : $related_Posts_slider->the_post(); ?>
+
+            <!--Related post slide-->
             <div class="swiper-slide">
               <a class="theme  components  containers  block-container
                         section-related-posts-1__image  image-wrapper
-                        theme  modificators  margins  margin-item--sm"  href="#">
-                <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/sections/related-posts/related-post-1.jpg'; ?>" alt="alt">
+                        theme  components  images  image-wrapper
+                        theme  modificators  margins  margin-item--sm"  href="<?php the_permalink(); ?>">
+                <img class="theme  modificators  images-with-hover  image--full-width" src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="alt">
               </a>
               <a class="theme  components  containers  block-container
                         theme  modificators  margins  margin-title--xs-1
-                        theme  modificators  colors  links-color-1" href="#">
-                <h3 class="theme  modificators  fonts  font-family-3  fonts-titles--sm">Pellentesque ornare sem lacinia.</h3>
+                        theme  modificators  colors  links-color-1" href="<?php the_permalink(); ?>">
+                <h3 class="theme  modificators  fonts  font-family-3  fonts-titles--sm"><?php the_title(); ?></h3>
               </a>
-              <span>Oct, 7th, 2016</span>
+              <span class="date">Дата поста:  <?php echo get_the_date('j F Y'); ?></span>
             </div>
+            <!--Related post slide-->
 
-            <div class="swiper-slide">
-              <a class="theme  components  containers  block-container
-                        section-related-posts-1__image  image-wrapper
-                        theme  modificators  margins  margin-item--sm"  href="#">
-                <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/sections/related-posts/related-post-1.jpg'; ?>" alt="alt">
-              </a>
-              <a class="theme  components  containers  block-container
-                        theme  modificators  margins  margin-title--xs-1
-                        theme  modificators  colors  links-color-1" href="#">
-                <h3 class="theme  modificators  fonts  font-family-3  fonts-titles--sm">Pellentesque ornare sem lacinia.</h3>
-              </a>
-              <span>Oct, 7th, 2016</span>
-            </div>
+            <?php endwhile; ?>
 
-            <div class="swiper-slide">
-              <a class="theme  components  containers  block-container
-                        section-related-posts-1__image  image-wrapper
-                        theme  modificators  margins  margin-item--sm"  href="#">
-                <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/sections/related-posts/related-post-1.jpg'; ?>" alt="alt">
-              </a>
-              <a class="theme  components  containers  block-container
-                        theme  modificators  margins  margin-title--xs-1
-                        theme  modificators  colors  links-color-1" href="#">
-                <h3 class="theme  modificators  fonts  font-family-3  fonts-titles--sm">Pellentesque ornare sem lacinia.</h3>
-              </a>
-              <span>Oct, 7th, 2016</span>
-            </div>
+            <?php else: ?>
+              <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+            <?php endif; ?>
 
-            <div class="swiper-slide">
-              <a class="theme  components  containers  block-container
-                        section-related-posts-1__image  image-wrapper
-                        theme  modificators  margins  margin-item--sm"  href="#">
-                <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/sections/related-posts/related-post-1.jpg'; ?>" alt="alt">
-              </a>
-              <a class="theme  components  containers  block-container
-                        theme  modificators  margins  margin-title--xs-1
-                        theme  modificators  colors  links-color-1" href="#">
-                <h3 class="theme  modificators  fonts  font-family-3  fonts-titles--sm">Pellentesque ornare sem lacinia.</h3>
-              </a>
-              <span>Oct, 7th, 2016</span>
-            </div>
-
-            <div class="swiper-slide">
-              <a class="theme  components  containers  block-container
-                        section-related-posts-1__image  image-wrapper
-                        theme  modificators  margins  margin-item--sm"  href="#">
-                <img class="theme  modificators  images-with-hover  image--full-width" src="<?php echo get_template_directory_uri() . '/sources/theme/images/sections/related-posts/related-post-1.jpg'; ?>" alt="alt">
-              </a>
-              <a class="theme  components  containers  block-container
-                        theme  modificators  margins  margin-title--xs-1
-                        theme  modificators  colors  links-color-1" href="#">
-                <h3 class="theme  modificators  fonts  font-family-3  fonts-titles--sm">Pellentesque ornare sem lacinia.</h3>
-              </a>
-              <span>Oct, 7th, 2016</span>
-            </div>
-
-
+            <?php wp_reset_postdata(); ?>
 
           </div>
 
         </div>
-        <!--Carousel-->
+        <!--Carousel body-->
+        <!--Carousel for related posts-->
+
+        <?php } ?>
 
         
       </div>
