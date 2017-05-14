@@ -37,7 +37,7 @@ Template Name: Portfolio single page
                 <div class="swiper-wrapper">
 
                   <?php
-                  $single_project_images = rwmb_meta( 'nango_portfolio_single-gallery', array(), get_the_ID() );
+                  $single_project_images = rwmb_meta( 'nango_portfolio_single_post-gallery', array(), get_the_ID() );
 
                   if ( !empty( $single_project_images ) ) {
                       foreach ( $single_project_images as $image ) {
@@ -107,14 +107,14 @@ Template Name: Portfolio single page
                               theme  modificators  lines  line-1--inline
                               theme  modificators  gradients  background-gradient-0-deg"></div>
                 </h1>
-                <p class="theme  modificators  fonts  font-family-3  fonts-titles--xs-up"><?php echo rwmb_meta( 'nango_portfolio_single-sub-title', array(), get_the_ID() ); ?></p>
+                <p class="theme  modificators  fonts  font-family-3  fonts-titles--xs-up"><?php echo rwmb_meta( 'nango_portfolio_single_post-subtitle', array(), get_the_ID() ); ?></p>
               </section>
 
 
               <section class="theme  modificators  sections  section-5">
                 <h2 class="theme  components  titles
                            theme  modificators  fonts  font-family-4  fonts-titles--sm
-                           theme  modificators  margins  margin-title--sm-1"><?php echo rwmb_meta( 'nango_portfolio_single-title-description', array(), get_the_ID() ); ?></h2>
+                           theme  modificators  margins  margin-title--sm-1"><?php echo get_post_meta( 24, 'ncfd__portfolio-single-page', true )['title-desc']; ?></h2>
                 <div class="theme  modificators  fonts  fonts-paragraph--justify
                           theme  modificators  fonts  fonts-paragraphs--md
                           theme  modificators  margins  margin-paragraph--md">
@@ -131,26 +131,27 @@ Template Name: Portfolio single page
                   <div class="theme  components  tables  table-detail-item-1">
                     <h2 class="theme  components  titles
                          theme  modificators  fonts  font-family-4  fonts-titles--sm
-                         theme  modificators  margins  margin-title--sm-1"><?php echo rwmb_meta( 'nango_portfolio_single-characteristics', array(), get_the_ID() ); ?></h2>
+                         theme  modificators  margins  margin-title--sm-1"><?php echo get_post_meta( 24, 'ncfd__portfolio-single-page', true )['title-detail']; ?></h2>
+
                     <div class="table">
                       <div class="table__col">
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
-                          Date
+                          <?php echo get_post_meta( 24, 'ncfd_portfolio-single-page__table-details', true )['table-row-1']; ?>
                         </div>
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
-                          Категории
+                          <?php echo get_post_meta( 24, 'ncfd_portfolio-single-page__table-details', true )['table-row-2']; ?>
                         </div>
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
-                          Client
+                          <?php echo get_post_meta( 24, 'ncfd_portfolio-single-page__table-details', true )['table-row-3']; ?>
                         </div>
                       </div>
                       <div class="table__col">
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
-                          <?php echo rwmb_meta( 'nango_portfolio_single-release-date', array(), get_the_ID() ); ?>
+                          <?php echo rwmb_meta( 'nango_portfolio_single_post-release-date', array(), get_the_ID() ); ?>
                         </div>
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
@@ -169,7 +170,7 @@ Template Name: Portfolio single page
                         </div>
                         <div class="table__row
                                     theme  modificators  margins  margin-table__row--sm">
-                          <?php echo rwmb_meta( 'nango_portfolio_single-client', array(), get_the_ID() ); ?>
+                          <?php echo rwmb_meta( 'nango_portfolio_single_post-client', array(), get_the_ID() ); ?>
                         </div>
                       </div>
                     </div>
@@ -182,7 +183,9 @@ Template Name: Portfolio single page
               <section>
                 <h2 class="theme  components  titles
                            theme  modificators  fonts  font-family-4  fonts-titles--sm
-                           theme  modificators  margins  margin-title--sm-1">Share this project</h2>
+                           theme  modificators  margins  margin-title--sm-1">
+                  <?php echo get_post_meta( 24, 'ncfd__portfolio-single-page', true )['title-share']; ?>
+                </h2>
                 <!--Share this widget-->
                 <?php get_template_part('template-widgets/widgets-share-this/widget-share-this-1'); ?>
                 <!--Share this widget-->

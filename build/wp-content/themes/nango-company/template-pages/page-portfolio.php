@@ -95,8 +95,8 @@ Template Name: Portfolio page
                             theme  modificators  lines  line-1--inline
                             theme  modificators  gradients  background-gradient-0-deg"></div>
             </h1>
-            <p class="theme  modificators  fonts  font-family-3  fonts-titles--xs-up">Our projects</p>
-  
+            <p class="theme  modificators  fonts  font-family-3  fonts-titles--xs-up"><?php echo get_post_meta( $post->ID, 'ncfd__portfolio-single-page', true )['subtitle']; ?></p>
+<!--
             <ul class="page-portfolio__list-categories
                        theme  modificators  fonts  font-family-3  fonts-lists--lg">
               <li class="list-categories__item">
@@ -114,6 +114,21 @@ Template Name: Portfolio page
               <li class="list-categories__item">
                 <a class="theme  modificators  colors links-color-1" href="#">Angular</a>
               </li>
+            </ul>
+-->
+
+            <ul class="page-portfolio__list-categories
+                       theme  modificators  fonts  font-family-3  fonts-lists--lg">
+              <?php
+              wp_list_categories( array(
+                'taxonomy'     => 'tax-portfolio-categories', // название таксономии
+                'orderby'      => 'name',  // сортируем по названиям
+                'show_count'   => 0,       // не показываем количество записей
+                'pad_counts'   => 0,       // не показываем количество записей у родителей
+                'hierarchical' => 1,       // древовидное представление
+                'title_li'     => ''       // список без заголовка
+              ));
+              ?>
             </ul>
           </div>
 
