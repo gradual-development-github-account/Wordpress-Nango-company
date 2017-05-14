@@ -73,7 +73,19 @@ require_once ('functions/hooks/hooks__links.php');
 //Custom metaboxes
   //Blog
     require_once ('functions/custom-metaboxes/custom-metaboxes__blog.php');
-  //Portfolio
-    require_once ('functions/custom-metaboxes/custom-metaboxes__portfolio.php')
+
+  //Portfolio list page
+    require_once ('functions/custom-metaboxes/custom-metaboxes__portfolio-list-page.php');
+
+  //Portfolio single page filelds
+    require_once ('functions/custom-metaboxes/portfolio-single-page/custom-metaboxes_portfolio-single-page__fields.php');
+  //Portfolio single page table Details
+    require_once ('functions/custom-metaboxes/portfolio-single-page/custom-metaboxes_portfolio-single-page__table-Details.php');
+
+  //Portfolio single post
+    require_once ('functions/custom-metaboxes/custom-metaboxes__portfolio-single-post.php');
+
+  //About
+    require_once ('functions/custom-metaboxes/about-page/custom-metaboxes_portfolio-single-page__team.php');
 
 ?>
