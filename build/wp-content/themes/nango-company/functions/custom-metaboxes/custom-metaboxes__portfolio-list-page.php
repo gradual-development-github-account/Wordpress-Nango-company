@@ -1,50 +1,62 @@
 <?php
+
+/**
+ * При создании новых полей( копировании кода из этого файла и вставка в другом файле ) нужно помеянть:
+ * 1. Названия функций начинающиеся на ncmb
+ *
+ * 2. в функции ncmb_ . . . _loader поменять
+ *   2.1. case ' . . . ' на case 'название типа записи':
+ *   2.2. my-meta-box--. . . на my-meta-box--название типа записи
+ *
+ * 3. Название ячеек в БД начинающихся с ncfd
+ *
+ * 4. Названия id полей ncf_ . . . __id . . .
+ *
+ * 5. Названия массивов имён ncf_ . . . __names
+ *
+ * 6. Изменить ncfd в файле где выполняется вывод поля
+ *
+ * 7. Для каждого поля в ncmb_ . . . _render поменять
+ *   7.1. ncf_ . . . __id-название поля
+ *   7.2. ncf_ . . . __names-название поля
+ *   7.3. в атрибуте value =  . . . $fields[' . . . '] заменить на $fields['название поля']
+ *
+ *
+ * Описание сокращений
+ *   ncmb - Nango custom metaboxes
+ *   ncfd - Nango custom fields data
+ *   ncf  - Nango custom fields
+ */
+
+
 /**
  * Render function
  */
-function nango_Portfolio_list_page_metaboxes_render( $post ) {
+function ncmb_Portfolio_list_page_render( $post ) {
 
-  $fields = get_post_meta( $post->ID, 'nango_portfolio_list_page', true );
-
-  settings_errors();
+  $fields = get_post_meta( $post->ID, 'ncfd__portfolio-single-page', true );
 
   ?>
-  <div>
-    <label class=""
-           for="nango_portfolio-list-page__subtitle">Подзаголовок</label>
-    <input class=""
-            id="nango_portfolio-list-page__subtitle"
-           type="text"
-           name="nango_portfolio_list_page[subtitle]"
-           value="<?php echo $fields['subtitle']; ?>">
 
-    <input type="hidden" name="nango_portfolio-list-page_nonce" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+  <div class="form-field">
+    <p class="post-attributes-label-wrapper">
+    <label class="post-attributes-label"
+           for="ncf_Portfolio_list_page__id-subtitle">Подзаголовок страницы</label>
+    </p>
+    <input class=""
+           id="ncf_Portfolio_list_page__id-subtitle"
+           type="text"
+           name="ncf_Portfolio_list_page__names[subtitle]"
+           value="<?php echo $fields['subtitle']; ?>">
   </div>
+
+
+  <div>
+    <input type="hidden" name="ncf_Portfolio_list_page__names[nonce]" value="<?php echo wp_create_nonce(__FILE__); ?>" />
+  </div>
+
   <?php
 
-  $_REQUEST['nango_portfolio_list_page']['st-1'] = 'text 1';
-  $_REQUEST['nango_portfolio_list_page']['st-2'] = 'text 2';
-  $_REQUEST['nango_portfolio_list_page']['st-3'] = 'text 3<>';
-
-  $cleaned_fields = [];
-
-  echo '<pre>';
-  print_r ( $_REQUEST['nango_portfolio_list_page'] );
-  echo '</pre>';
-
-  foreach ( $_REQUEST['nango_portfolio_list_page'] as $key => $value ) {
-    $cleaned_fields[ $key ] = sanitize_text_field( $value );
-  }
-
-  echo '<pre>';
-  print_r ( $cleaned_fields );
-  echo '</pre>';
-
-//  var_dump( $_REQUEST['nango_portfolio_list_page'] );
-//  echo '<br>';
-//  var_dump( $_REQUEST['nango_portfolio_list_page']['st'] );
-//  echo '<br>';
-//  var_dump( sanitize_text_field( $_REQUEST['nango_portfolio_list_page'] ) );
 }
 
 
@@ -53,23 +65,23 @@ function nango_Portfolio_list_page_metaboxes_render( $post ) {
 /**
  * Register metabox function
  */
-function nango_Portfolio_list_page_metaboxes_loader( $post_type, $post ) {
+function ncmb_Portfolio_list_page_loader( $post_type, $post ) {
 
   switch ( $post->post_name ) {
     case 'portfolio':
       add_meta_box(
-          'my-meta-box',
-          __( 'Подзаголовок' ),
-          'nango_Portfolio_list_page_metaboxes_render',
+          'my-meta-box--portfolio',
+          __( 'Подзаголовок страницы' ),
+          'ncmb_Portfolio_list_page_render',
           'page',
           'normal',
           'default'
       );
-    break;
+      break;
   }
 
 }
-add_action( 'add_meta_boxes', 'nango_Portfolio_list_page_metaboxes_loader', 10, 2 );
+add_action( 'add_meta_boxes', 'ncmb_Portfolio_list_page_loader', 10, 2 );
 
 
 
@@ -77,36 +89,24 @@ add_action( 'add_meta_boxes', 'nango_Portfolio_list_page_metaboxes_loader', 10, 
 /**
  * Save metabox function
  */
-function nango_Portfolio_list_page_metaboxes_saver( $post_id ) {
+function ncmb_Portfolio_list_page_saver( $post_id ) {
 
+  $not_cleaned_fields = $_REQUEST['ncf_Portfolio_list_page__names'];
   $cleaned_fields = [];
-  $cleaned_fields[] = $_REQUEST['nango_portfolio_list_page'];
 
-  foreach ( $_REQUEST['nango_portfolio_list_page'] as $key => $value ) {
 
+  if ( !empty( $not_cleaned_fields ) ) {
+
+    foreach ( $not_cleaned_fields as $key => $value ) {
+      $cleaned_fields[ $key ] = sanitize_text_field( $value );
+    }
+
+    update_post_meta( $post_id, "ncfd__portfolio-single-page", $cleaned_fields );
   }
-
-  /*
-  nango_portfolio_list_page = [
-    'subtitle'     => 'text',
-    'othertitle-1' => 'value 1',
-    'othertitle-2' => 'value 2',
-  ]
-  */
-
-//  update_post_meta( $post_id, "nango_portfolio_list_page", sanitize_text_field( [ 'first-key'=>'first-value' ] ) );
-  update_post_meta( $post_id, "nango_portfolio_list_page", $cleaned_fields );
-
-  if ( isset( $_REQUEST["nango_portfolio_list_page[subtitle]"] ) ) {
-
-  } else {
-
-  }
-
 
 
 }
-add_action( "save_post_page", 'nango_Portfolio_list_page_metaboxes_saver' );
+add_action( "save_post_page", 'ncmb_Portfolio_list_page_saver' );
 
 
 ?>
