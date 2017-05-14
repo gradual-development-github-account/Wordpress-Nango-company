@@ -7,8 +7,12 @@
     &__list-categories {
       margin-top: 270px;
       margin-bottom: 90px;
-      .list-categories__item {
+      li {
         margin-bottom: 20px;
+
+        a {
+          @extend .theme.modificators.colors.links-color-1;
+        }
       }
     }
     &__gallery {
