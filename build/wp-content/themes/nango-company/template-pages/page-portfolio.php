@@ -28,7 +28,7 @@ Template Name: Portfolio page
           <div class="page-portfolio__gallery">
 
             <?php $Portfolio_posts = new WP_Query( array(
-                'post_type'      => 'portfolio',
+                'post_type'      => 'quality-control',
                 'posts_per_page' => 3,
                 'order'          => 'DESC'
             )); ?>
@@ -44,7 +44,7 @@ Template Name: Portfolio page
                           images-with-hover-1__image-wrapper">
                 <img class="
                             images-with-hover-1__image
-                            theme  modificators  images-with-hover  image--full-width" src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="alt">
+                            theme  modificators  images-with-hover  image--full-height" src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="alt">
               </div>
               <a class="images-with-hover-1__hover-block" href="<?php the_permalink(); ?>">
                 <div class="hover-block__mask
@@ -81,7 +81,9 @@ Template Name: Portfolio page
 
           <div class="vendor  modificators  flexboxgrid  flex-container  container--justify-content-center">
             <button class="theme  compononents  buttons  button-1
-                           theme  modificators  fonts  font-family-3" type="button">View more</button>
+                           theme  modificators  fonts  font-family-3" type="button">
+              <?php echo get_post_meta( $post->ID, 'ncfd__quality_control_list-page', true )['button-view-more']; ?>
+            </button>
           </div>
         </div>
         <div class="vendor  components  flexboxgrid  col  col-md-6">
@@ -90,12 +92,17 @@ Template Name: Portfolio page
                        theme  components  titles  titles-with-line  titles-with-line-1
                        theme  modificators  fonts  font-family-4  fonts-titles--lg
                        theme  modificators  margins  margin-title--sm">
-              <span class="text">Portfolio</span>
+
+
+
+              <span class="text"><?php echo get_the_title('22'); ?></span>
               <div class="line
                             theme  modificators  lines  line-1--inline
                             theme  modificators  gradients  background-gradient-0-deg"></div>
             </h1>
-            <p class="theme  modificators  fonts  font-family-3  fonts-titles--xs-up"><?php echo get_post_meta( $post->ID, 'ncfd__portfolio-single-page', true )['subtitle']; ?></p>
+            <p class="theme  modificators  fonts  font-family-  fonts-titles--xs-up">
+              <?php echo get_post_meta( $post->ID, 'ncfd__quality_control_list-page', true )['subtitle']; ?>
+            </p>
 <!--
             <ul class="page-portfolio__list-categories
                        theme  modificators  fonts  font-family-3  fonts-lists--lg">
@@ -116,10 +123,11 @@ Template Name: Portfolio page
               </li>
             </ul>
 -->
-
+<!--
             <ul class="page-portfolio__list-categories
                        theme  modificators  fonts  font-family-3  fonts-lists--lg">
               <?php
+
               wp_list_categories( array(
                 'taxonomy'     => 'tax-portfolio-categories', // название таксономии
                 'orderby'      => 'name',  // сортируем по названиям
@@ -130,8 +138,14 @@ Template Name: Portfolio page
               ));
               ?>
             </ul>
-          </div>
+-->
 
+            <div class="page-portfolio__desc
+                        theme  modificators  fonts  fonts-paragraph--justify
+                        theme  modificators  fonts  fonts-paragraphs--md">
+              <?php echo get_post_meta( $post->ID, 'ncfd__quality_control_list-page', true )['desc']; ?>
+              </div>
+          </div>
         </div>
       </div>
     </div>
