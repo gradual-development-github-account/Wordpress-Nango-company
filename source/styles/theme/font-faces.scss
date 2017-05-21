@@ -2,6 +2,17 @@
 
 @include font-face( $font-family-1--bold,    '#{$fonts-path}/Ubuntu/UbuntuBold/UbuntuBold', normal, normal, eot woff );
 
+
+
+
 @include font-face( $font-family-2--regular, '#{$fonts-path}/Montserrat/MontserratRegular/Montserrat-Regular', normal, normal, eot woff svg );
 
 @include font-face( $font-family-2--bold,    '#{$fonts-path}/Montserrat/MontserratBold/Montserrat-Bold', normal, normal, eot woff svg );
+
+
+
+
+@include font-face( $font-family-3--regular, '#{$fonts-path}/Raleway/RalewayRegular/RalewayRegular', normal, normal, eot woff );
+
+@include font-face( $font-family-3--bold,    '#{$fonts-path}/Raleway/RalewayBold/RalewayBold', normal, normal, eot woff );
+
