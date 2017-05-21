@@ -10,7 +10,7 @@
           <div class="mask__content
                       vendor  modificators  flexboxgrid  flex-container  container--justify-content-center  container--align-items-center">
             <span class="theme  modificators  colors  color-5
-                     theme  modificators  fonts  font-family-4  sections-number--lg">01</span>
+                     theme  modificators  fonts  font-family-4  sections-number--lg"><?php echo get_post_meta( 8, 'ncfd__sections-page_section_01', true )['number']; ?></span>
           </div>
 
 
@@ -40,25 +40,27 @@
             <div class="page-sections__sections-data-container
                         theme  modificators  containers  full-width">
               <h2 class="theme  components  titles  titles-with-line  titles-with-line-1
-                         theme  modificators  fonts  font-family-3  fonts-titles--md
+                         theme  modificators  fonts  font-family-4  fonts-titles--md
                          theme  modificators  margins  margin-title--sm">
-                <span class="text">Section introducion</span>
+                <span class="text"><?php echo get_post_meta( 8, 'ncfd__sections-page_section_01', true )['title']; ?></span>
                 <div class="line
                           theme  modificators  lines  line-1--inline
                           theme  modificators  gradients  background-gradient-0-deg"></div>
               </h2>
-              <p class="theme  modificators  fonts  font-family-3  fonts-titles--xs-up
-                        theme  modificators  margins  margin-title--md">Professional web developer</p>
-              <p class="theme  modificators  fonts  fonts-paragraph--justify
+              <p class="theme  modificators  fonts  font-family-  fonts-titles--xs-up
+                        theme  modificators  margins  margin-title--md"><?php echo get_post_meta( 8, 'ncfd__sections-page_section_01', true )['subtitle']; ?></p>
+              <div class="theme  modificators  fonts  fonts-paragraph--justify
                         theme  modificators  fonts  fonts-paragraphs--md">
-                Id sale idque legendos nec, ut dolore definiebas mei. Duo labores perpetua persecuti id, adipisci atomorum no qui. Cu has mucius accusam sapientem, nam agam oratio et, autem dicat his ut. Te fugit apeirian vel.
-              </p>
-              <p class="theme  modificators  fonts  fonts-paragraph--justify">
-                Soluta nostrud gloriatur eum ne. Vidit electram percipitur te sit. Alterum insolens ex mel, id esse repudiandae vis, ut percipit rationibus sed. Illum democritum vim in, solet iuvaret.
-              </p>
-              <button class="section-introducion-1__button
-                         theme  compononents  buttons  button-1
-                         theme  modificators  fonts  font-family-3" type="button">Read more</button>
+                <?php echo get_post_meta( 8, 'ncfd__sections-page_section_01', true )['desc']; ?>
+              </div>
+              
+              <a class="section-introducion-1__button
+                            theme  components  containers  inline-block-container
+                            theme  compononents  buttons  button-1
+                            theme  modificators  fonts  font-family-3"
+                      href="<?php echo get_permalink('12'); ?>">
+                <?php echo get_post_meta( 8, 'ncfd__sections-page_section_01', true )['button-about-us']; ?>
+              </a>
             </div>
 
           </div>
