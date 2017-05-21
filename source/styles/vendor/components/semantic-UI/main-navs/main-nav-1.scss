@@ -39,7 +39,7 @@
     /*Fonts*/
     &__menu {
       .item {
-        font-family: $font-family-2--bold;
+        font-family: $font-family-3--bold;
         @include font( $size: 16px, $text-transform: 'up' );
       }
     }
