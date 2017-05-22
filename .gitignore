@@ -14,7 +14,8 @@ build/wp-content/themes/nango-company/sources/theme/fonts/**/*.*
 build/wp-content/themes/nango-company/sources/theme/images/**/*.*
 build/wp-content/themes/nango-company/sources/theme/styles/**/*.*
 build/wp-content/themes/nango-company/sources/theme/video/**/*.*
-
+build/wp-content/plugins/**
+build/wp-content/plugins/**/*.*
 
 
 build/wp-content/themes/nango-company/sources/vendor/**/*.*
@@ -26,3 +27,6 @@ source/styles/styles/*.scss
 wp-settings.md
 git-commits.md
 grid.md
+
+host_rules.txt
+h_gra.txt
